@@ -2,8 +2,11 @@ package sistemaVoo;
 
 import java.util.Scanner;
 
+import sistemaVoo.entidades.Administrador;
+import sistemaVoo.entidades.Atendente;
 import sistemaVoo.entidades.Cliente;
 import sistemaVoo.entidades.Funcionario;
+import sistemaVoo.entidades.Operador;
 
 
 public class CorpoDaMain {
@@ -40,19 +43,34 @@ public class CorpoDaMain {
 	   		}
 
 	    switch (caso){
-	    case 1:
+	    case 1: //Cliente
 	    	Cliente cliente = new Cliente();
 	    	cliente.menuDoCliente();
 	    	break;
 	    	
-	    case 2: 
+	    case 2: //Funcionario
 	    	Funcionario funcionario = new Funcionario();
-	    	funcionario.menuDoFuncionario();
+	    	int caso2 = funcionario.menuDoFuncionario();
+	    	if(caso2==1){ //Atendente (upcasting)
+	    		funcionario = new Atendente();
+	    		funcionario.menu();
+	    	}
+	    	else if(caso2 ==2){ //Administrador (upcasting)
+	    		funcionario = new Administrador();
+	    		funcionario.menu();
+	    	}
+	    	else if(caso2==3){ //Operador (upcasting)
+	    		funcionario = new Operador();
+	    		funcionario.menu();
+	    	}
+	    	else{
+	    		System.out.println("Insira um caractere válido.\n");
+	    	}
 	    	break;
-	    case 3: 
+	    case 3: //Sair
 	    	System.out.println("Até a próxima!");
 	    	break;
-	    default:
+	    default: //Outra coisa
 	    	System.out.println("Insira um caracter válido!\n");
 	    	break;
 	    }

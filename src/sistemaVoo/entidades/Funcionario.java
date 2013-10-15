@@ -2,8 +2,6 @@ package sistemaVoo.entidades;
 
 import java.util.Scanner;
 import sistemaVoo.infraestrutura.Voo;
-import sistemaVoo.util.Data;
-import sistemaVoo.util.Horario;
 
 public class Funcionario {
 
@@ -47,33 +45,29 @@ public class Funcionario {
 		System.out.println("Você não tem permissão para consultar esse tipo de informação.");
 	}
 	
-	//MENU
-	public void menuDoFuncionario(){
-    	System.out.println("Seja bem-vindo, funcionário. O que você gostaria de fazer?");
-    	System.out.println("[C]adastrar voo");
+	//MENU COM SAIDA
+	public int menuDoFuncionario(){
+    	System.out.println("Seja bem-vindo, funcionário");
+    	System.out.println("Você é: A[t]endente, A[d]ministrador ou [O]perador?");
     	
     	Scanner scanIn = new Scanner(System.in);
-    	String leitor = scanIn.nextLine().toLowerCase();
-    	
-        if(leitor.equals("c")){
-        	Voo voo = new Voo();
-        	
-    		// Dados de teste
-    		Data dataVoo = new Data(1,1,2013);
-    		Horario horarioVoo = new Horario(14,30);
-        	
-    		/** DEPENDENCIA ENTRE VOO E OPERADOR TESTADA \/ \/ \/
-        	voo.cadastrarVoo("A200", "Brasília", "Guarulhos", dataVoo, horarioVoo, 300);
-        	System.out.println("Voo cadastrado. Máximo de passageiros: " + voo.getMaxPassageiro());
-        	
-        	// Adicionando um passageiro
-        	Cliente cliente = new Cliente();
-        	cliente.setNomeCliente("José");
-        	voo.adicionarPassageiro(cliente);
-        	System.out.println("Existe(m) " + voo.getPassageiros().length + " passageiro(s) " +
-        			"cadastrado(s) nesse voo.\n");
-        	voo.listarPassageiros();**/
+    	String leitor2 = scanIn.nextLine().toLowerCase();
+    	int saida=4;
+        if(leitor2.equals("t") | leitor2.equals("atendente")){
+        	saida = 1;
         }
+        if(leitor2.equals("d") | leitor2.equals("administrador")){
+        	saida = 2;
+        }
+        if(leitor2.equals("o") | leitor2.equals("operador")){
+        	saida = 3;
+        }
+        return saida;	
+	}
+	
+	//MENU SEM SAIDA (POLIMORFISMO)
+	public void menu(){
+		System.out.println("Bem vindo, funcionário!");
 	}
 	
 	public String getLogin() {
