@@ -14,8 +14,8 @@ public class Funcionario {
 	public Funcionario() {}
 	
 	//CONSTRUTOR COM 1 PARAMETRO
-	public Funcionario(String loginOp) {
-		this.login = loginOp;
+	public Funcionario(String login) {
+		this.login = login;
 	}
 	
 	//CADASTRAR SENHA
@@ -43,7 +43,7 @@ public class Funcionario {
 	}
 
 	//CONSULTA PASSAGEIROS
-	public void consultaPassageiros(Voo voo){
+	public void consultarPassageiros(Voo voo){
 		System.out.println("Você não tem permissão para consultar esse tipo de informação.");
 	}
 	

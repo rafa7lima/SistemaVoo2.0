@@ -1,8 +1,4 @@
 package sistemaVoo.entidades;
 
 
-public class Operador extends Funcionario {
-
-
-	
-}
+public class Operador extends Funcionario { }
