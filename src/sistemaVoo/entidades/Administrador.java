@@ -1,9 +1,19 @@
 package sistemaVoo.entidades;
 
+import sistemaVoo.infraestrutura.Voo;
+
 public class Administrador extends Funcionario {
 
-	public Administrador() {
-		// TODO Auto-generated constructor stub
-	}
+	public Administrador() { }
+	
+	// Consulta mais especializada que a do atendente
+		public void consultaPassageiro(Voo voo){
+			System.out.println("Os passageiros do voo " + voo.getNumero() + " s‹o:\n");
+			Passageiro[] listaPassageiros = voo.getListaDePassageiros() ;
+			int qntPassageiros = listaPassageiros.length;
+			for(int i=0;i<qntPassageiros;i++){
+				System.out.println(listaPassageiros[i].getNome() + "    " + listaPassageiros[i].getCpf());
+			}
+		}
 
 }

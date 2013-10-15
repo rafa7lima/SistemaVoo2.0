@@ -1,6 +1,8 @@
 package sistemaVoo.entidades;
 
 import sistemaVoo.testes.TesteCpf;
+import java.util.Scanner;
+
 
 public class Cliente {
 
@@ -39,6 +41,21 @@ public class Cliente {
 				System.out.println("CPF inválido. Favor inserir um CPF válido.");
 			}
 		}
+	
+	public void menuDoCliente(){
+		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
+    	System.out.println("[C]adastrar-se.");	
+    	
+    	Scanner scanIn = new Scanner(System.in);
+    	String leitor = scanIn.nextLine().toLowerCase();
+    	
+        if(leitor.equals("c")){
+        	this.cadastrarCliente("Fulano", "Casa 4 conj 5", "02545188182", "(61) 2345-5432");
+        }
+        else
+        	System.out.println("Opção inválida.");
+        
+	}
 
 	public String getNome() {
 		return nome;
