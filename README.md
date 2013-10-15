@@ -8,8 +8,8 @@ Este sistema está sendo desenvolvido durante a disciplina de Orientação a Obj
 
 Informações do Grupo:
 GRUPO 7
-Rafael Valença\n
-Iago Leite\n
-Dennis Merli\n
+Rafael Valença
+Iago Leite
+Dennis Merli
 
 O início desse projeto pode ser encontrado em: https://github.com/rafa7lima/Sistema_OO 
