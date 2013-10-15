@@ -1,5 +1,6 @@
 package sistemaVoo.entidades;
 
+import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
 
 public class Administrador extends Operador {
@@ -10,14 +11,30 @@ public class Administrador extends Operador {
 		public void consultarPassageiro(Voo voo){
 			System.out.println("Os passageiros do voo " + voo.getNumero() + " s‹o:\n");
 			Passageiro[] listaPassageiros = voo.getListaDePassageiros() ;
-			int qntPassageiros = listaPassageiros.length;
-			for(int i=0;i<qntPassageiros;i++){
-				System.out.println(listaPassageiros[i].getNome() + "    " + listaPassageiros[i].getCpf());
+			for(Passageiro passageiro : listaPassageiros){
+				System.out.println(passageiro);
 			}
 		}
 		
 		public void menu(){
-			System.out.println("yeah baby");
+			System.out.println("O que voc deseja fazer?");
+			System.out.println("1. Remover voo");
+			System.out.println("2. Remover passageiro");
+			System.out.println("3. Consultar lista de passageiros");
+			
+			int i = Ler.lerNumero();
+			if (i == 1){
+				System.out.println("MŽtodo n‹o implementado.");
+			}
+			if(i == 2){
+				System.out.println("MŽtodo n‹o implementado.");
+			}
+			if(i==3){
+				System.out.println("Qual o nœmero do voo?");
+				String numeroVoo = Ler.lerDoTeclado();
+				Voo voo = new Voo(numeroVoo);
+				this.consultarPassageiro(voo);
+			}
 		}
 
 }

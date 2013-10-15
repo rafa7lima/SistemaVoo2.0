@@ -17,6 +17,10 @@ public class Voo {
 	public Voo() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Voo(String numeroVoo){
+		this.numero = numeroVoo;
+	}
 
 	public void cadastrarVoo(String numeroVoo, Aeroporto origemVoo, Aeroporto destinoVoo,
 			Horario horarioPartida, Horario horarioChegada, Aviao aviao, Operador operador){

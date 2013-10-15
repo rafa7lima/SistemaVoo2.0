@@ -16,5 +16,10 @@ public class Passageiro extends Cliente {
 		this.numeroAssento=numeroAssento;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + getNome() +"    |  CPF: "+ getCpf(); 
+	}
 
 }

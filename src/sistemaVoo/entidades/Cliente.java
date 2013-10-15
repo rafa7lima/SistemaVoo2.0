@@ -2,7 +2,6 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
-import java.util.Scanner;
 
 
 public class Cliente {
