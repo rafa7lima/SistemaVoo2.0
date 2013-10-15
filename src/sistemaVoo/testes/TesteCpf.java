@@ -17,6 +17,7 @@ public class TesteCpf {
 		   if(cpf.length() != 11){
 		      System.out.println("Cpf digitado Ž inv‡lido\n");
 		      validacao=false;
+		      return validacao;
 		    }
 
 		 

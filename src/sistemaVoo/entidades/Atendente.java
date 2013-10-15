@@ -1,5 +1,6 @@
 package sistemaVoo.entidades;
 
+import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
 
 public class Atendente extends Funcionario {
@@ -13,6 +14,28 @@ public class Atendente extends Funcionario {
 		int qntPassageiros = listaPassageiros.length;
 		for(int i=0;i<qntPassageiros;i++){
 			System.out.println(listaPassageiros[i].getNome());
+		}
+	}
+	
+	//Menu
+	public void menu(){
+		System.out.println("O que voc deseja fazer?");
+		System.out.println("1. Realizar Check-in");
+		System.out.println("2. Despachar bagagens");
+		System.out.println("3. Consultar lista de passageiros");
+		
+		int i = Ler.lerNumero();
+		if (i == 1){
+			System.out.println("MŽtodo n‹o implementado.");
+		}
+		if(i == 2){
+			System.out.println("MŽtodo n‹o implementado.");
+		}
+		if(i==3){
+			System.out.println("Qual o nœmero do voo?");
+			String numeroVoo = Ler.lerDoTeclado();
+			Voo voo = new Voo(numeroVoo);
+			this.consultarPassageiro(voo);
 		}
 	}
 
