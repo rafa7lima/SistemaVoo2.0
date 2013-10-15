@@ -7,7 +7,7 @@ public class Atendente extends Funcionario {
 	public Atendente() {}
 	
 	// Consulta pouco especializada
-	public void consultaPassageiro(Voo voo){
+	public void consultarPassageiro(Voo voo){
 		System.out.println("Os passageiros do voo " + voo.getNumero() + " s‹o:\n");
 		Passageiro[] listaPassageiros = voo.getListaDePassageiros() ;
 		int qntPassageiros = listaPassageiros.length;
