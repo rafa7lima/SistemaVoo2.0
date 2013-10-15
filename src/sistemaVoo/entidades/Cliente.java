@@ -1,5 +1,6 @@
 package sistemaVoo.entidades;
 
+import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
 import java.util.Scanner;
 
@@ -27,36 +28,44 @@ public class Cliente {
 			this.telefone = telefoneCliente;
 	}
 	
-	public void cadastrarCliente(String nome, String endereco, String cpf, String telefone){
+	//CADASTRAR
+	public void cadastrarCliente(){
+			System.out.println("Diga seu CPF (Apenas números):");
+			String cpf = Ler.lerDoTeclado();
 			TesteCpf teste = new TesteCpf();
 			boolean validacaoCpf = teste.ValidarCpf(cpf);
 			if(validacaoCpf == true){
-				this.nome= nome;
-				this.endereco= endereco;
+				System.out.println("Insira os demais dados:");
+				System.out.println("Nome:");
+				this.nome= Ler.lerDoTeclado();
+				System.out.println("Endereco:");
+				this.endereco=Ler.lerDoTeclado();
+				System.out.println("Telefone:");
+				this.telefone=Ler.lerDoTeclado();
 				this.cpf = cpf;
-				this.telefone = telefone;
-				System.out.println("Cliente " + this.nome + " cadastrado.");
+				System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
 			}
 			else{
 				System.out.println("CPF inválido. Favor inserir um CPF válido.");
 			}
 		}
 	
+	//MENU
 	public void menuDoCliente(){
 		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
     	System.out.println("[C]adastrar-se.");	
     	
-    	Scanner scanIn = new Scanner(System.in);
-    	String leitor = scanIn.nextLine().toLowerCase();
+    	String leitor = Ler.lerDoTeclado().toLowerCase();
     	
         if(leitor.equals("c")){
-        	this.cadastrarCliente("Fulano", "Casa 4 conj 5", "02545188182", "(61) 2345-5432");
+        	this.cadastrarCliente();
         }
         else
         	System.out.println("Opção inválida.");
-        
 	}
+	
 
+	//GETTERS E SETTERS	
 	public String getNome() {
 		return nome;
 	}

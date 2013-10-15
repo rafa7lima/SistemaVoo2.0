@@ -15,5 +15,9 @@ public class Administrador extends Operador {
 				System.out.println(listaPassageiros[i].getNome() + "    " + listaPassageiros[i].getCpf());
 			}
 		}
+		
+		public void menu(){
+			System.out.println("yeah baby");
+		}
 
 }

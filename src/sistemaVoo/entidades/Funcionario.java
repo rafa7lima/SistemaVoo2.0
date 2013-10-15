@@ -1,6 +1,7 @@
 package sistemaVoo.entidades;
 
-import java.util.Scanner;
+
+import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
 
 public class Funcionario {
@@ -25,19 +26,9 @@ public class Funcionario {
 	
 	//VERIFICAR SENHA
 	public boolean verificarSenha(){
-		String leitor;
-		Scanner scanIn = new Scanner(System.in);
 		System.out.println("Qual é a sua senha?");
-		leitor = scanIn.nextLine();
-        leitor= leitor.toLowerCase();
-        boolean saida = false;
-        if(leitor.equals(this.senha)){
-        	saida = true;
-        }
-        else{
-        	System.out.println("Senha incorreta.");
-        }
-        return saida;
+		String leitor = Ler.lerDoTeclado();
+        return leitor.equals(this.senha);
 	}
 
 	//CONSULTA PASSAGEIROS
@@ -50,16 +41,15 @@ public class Funcionario {
     	System.out.println("Seja bem-vindo, funcionário");
     	System.out.println("Você é: A[t]endente, A[d]ministrador ou [O]perador?");
     	
-    	Scanner scanIn = new Scanner(System.in);
-    	String leitor2 = scanIn.nextLine().toLowerCase();
-    	int saida=4;
-        if(leitor2.equals("t") | leitor2.equals("atendente")){
+    	String leitor = Ler.lerDoTeclado().toLowerCase();
+    	int saida=0;
+        if(leitor.equals("t") | leitor.equals("atendente")){
         	saida = 1;
         }
-        if(leitor2.equals("d") | leitor2.equals("administrador")){
+        if(leitor.equals("d") | leitor.equals("administrador")){
         	saida = 2;
         }
-        if(leitor2.equals("o") | leitor2.equals("operador")){
+        if(leitor.equals("o") | leitor.equals("operador")){
         	saida = 3;
         }
         return saida;	
