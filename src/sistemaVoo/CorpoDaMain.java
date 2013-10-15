@@ -7,6 +7,7 @@ import sistemaVoo.entidades.Atendente;
 import sistemaVoo.entidades.Cliente;
 import sistemaVoo.entidades.Funcionario;
 import sistemaVoo.entidades.Operador;
+import sistemaVoo.util.Data;
 
 
 public class CorpoDaMain {
@@ -14,17 +15,19 @@ public class CorpoDaMain {
 	public CorpoDaMain() { }
 
 	public static void main(String[] args) { 
-	System.out.println("QUINTA ETAPA DA ATIVIDADE PRÁTICA");
+	System.out.println("QUINTA ETAPA DA ATIVIDADE PR√ßTICA");
 	System.out.println("Disciplina: Orientacao a objetos");
 	System.out.println("Professora Milene");
 	System.out.println("Grupo: 7\n");
+	Data nova=new Data();
+	nova.dataAtual();
 	
 	String leitor;
 	Scanner scanIn = new Scanner(System.in);
 	boolean testeSairDoLoop = true;
 	
 	while(testeSairDoLoop){
-		System.out.println("Você é: [C]liente ou [F]uncionário?");
+		System.out.println("VocÔøΩ ≈Ω: [C]liente ou [F]uncion‚Ä°rio?");
 		System.out.println("Para sair, digite [S].");
 
 	    leitor = scanIn.nextLine();
@@ -64,14 +67,14 @@ public class CorpoDaMain {
 	    		funcionario.menu();
 	    	}
 	    	else{
-	    		System.out.println("Insira um caractere válido.\n");
+	    		System.out.println("Insira um caractere v‚Ä°lido.\n");
 	    	}
 	    	break;
 	    case 3: //Sair
-	    	System.out.println("Até a próxima!");
+	    	System.out.println("At≈Ω a pr‚Äîxima!");
 	    	break;
 	    default: //Outra coisa
-	    	System.out.println("Insira um caracter válido!\n");
+	    	System.out.println("Insira um caracter v‚Ä°lido!\n");
 	    	break;
 	    }
 	}

@@ -12,8 +12,12 @@ public class Data {
 		private int dia;
 		private int mes;
 		private int ano;
+		
+		public Data(){
+			
+		}
 
-	    //Construtor sem parametros
+	    //Construtor com parametros
 		public Data(int d, int m, int a) {
 			this.dia = d;
 			this.mes = m;
