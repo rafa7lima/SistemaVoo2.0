@@ -26,20 +26,20 @@ public class Funcionario {
 	
 	//VERIFICAR SENHA
 	public boolean verificarSenha(){
-		System.out.println("Qual é a sua senha?");
+		System.out.println("Qual a sua senha?");
 		String leitor = Ler.lerDoTeclado();
         return leitor.equals(this.senha);
 	}
 
 	//CONSULTA PASSAGEIROS
 	public void consultarPassageiros(Voo voo){
-		System.out.println("Você não tem permissão para consultar esse tipo de informação.");
+		System.out.println("Voce nao tem permissao para consultar esse tipo de informacao.");
 	}
 	
 	//MENU COM SAIDA
 	public int menuDoFuncionario(){
-    	System.out.println("Seja bem-vindo, funcionário");
-    	System.out.println("Você é: A[t]endente, A[d]ministrador ou [O]perador?");
+    	System.out.println("Seja bem-vindo, funcionario");
+    	System.out.println("Voce È: A[t]endente, A[d]ministrador ou [O]perador?");
     	
     	String leitor = Ler.lerDoTeclado().toLowerCase();
     	int saida=0;
@@ -57,7 +57,7 @@ public class Funcionario {
 	
 	//MENU SEM SAIDA (POLIMORFISMO)
 	public void menu(){
-		System.out.println("Bem vindo, funcionário!");
+		System.out.println("Bem vindo, funcionario!");
 	}
 	
 	public String getLogin() {

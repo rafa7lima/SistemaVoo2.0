@@ -4,12 +4,8 @@ import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
 
 
-public class Cliente {
-
-	private String nome = " ";
-	private String endereco = " ";
-	private String cpf = "";
-	private String telefone = " ";
+public class Cliente extends Pessoa {
+	
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -45,13 +41,13 @@ public class Cliente {
 				System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
 			}
 			else{
-				System.out.println("CPF inválido. Favor inserir um CPF válido.");
+				System.out.println("CPF invalido. Favor inserir um CPF valido.");
 			}
 		}
 	
 	//MENU
 	public void menuDoCliente(){
-		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
+		System.out.println("Seja bem-vindo, cliente. O que voce gostaria de fazer?");
     	System.out.println("[C]adastrar-se.");	
     	
     	String leitor = Ler.lerDoTeclado().toLowerCase();
@@ -60,7 +56,7 @@ public class Cliente {
         	this.cadastrarCliente();
         }
         else
-        	System.out.println("Opção inválida.");
+        	System.out.println("Opcao invalida.");
 	}
 	
 
