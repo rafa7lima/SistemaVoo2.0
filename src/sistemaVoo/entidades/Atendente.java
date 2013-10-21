@@ -24,7 +24,7 @@ public class Atendente extends Funcionario {
 		System.out.println("2. Despachar bagagens");
 		System.out.println("3. Consultar lista de passageiros");
 		
-		int i = Ler.lerNumero();
+		int i = Ler.lerInteiro();
 		if (i == 1){
 			System.out.println("MŽtodo n‹o implementado.");
 		}
@@ -33,7 +33,7 @@ public class Atendente extends Funcionario {
 		}
 		if(i==3){
 			System.out.println("Qual o nœmero do voo?");
-			String numeroVoo = Ler.lerDoTeclado();
+			String numeroVoo = Ler.lerString();
 			Voo voo = new Voo(numeroVoo);
 			this.consultarPassageiro(voo);
 		}

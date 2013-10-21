@@ -8,14 +8,14 @@ public class TesteCpf {
 
 	public boolean ValidarCpf(String cpf){
 		//Validador de Cpf 11 numeros
-		  //Declaração de variaveis
+		  //Declarac‹o de variaveis
 
 		  int cont,soma,valor,peso,resultado;
 		  char ver1,ver2;
 		  boolean validacao = true;
 
 		   if(cpf.length() != 11){
-		      System.out.println("Cpf digitado Ž inv‡lido\n");
+		      System.out.println("CPF digitado Ž inv‡lido\n");
 		      validacao=false;
 		      return validacao;
 		    }

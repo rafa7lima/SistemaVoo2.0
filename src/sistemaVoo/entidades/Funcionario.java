@@ -3,8 +3,9 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
+import sistemaVoo.testes.TesteCpf;
 
-public class Funcionario {
+public class Funcionario extends PessoaFisica {
 
 	protected String login = "";
 	protected String senha = "";
@@ -24,10 +25,43 @@ public class Funcionario {
 		//OBS: MELHORAR A SEGURAN‚A DESTE METODO
 	}
 	
+	//Cadastrar
+	public boolean cadastrar(){
+		System.out.println("Diga seu CPF (Apenas nœmeros):");
+		String cpf = Ler.lerString();
+		TesteCpf teste = new TesteCpf();
+		boolean validacaoCpf = teste.ValidarCpf(cpf);
+		if(validacaoCpf == true){
+			System.out.println("Insira os demais dados:");
+			System.out.println("Login:");
+			this.login= Ler.lerString();
+			System.out.println("Senha:");
+			this.senha= Ler.lerString();
+			System.out.println("Nome:");
+			this.nome= Ler.lerString();
+			System.out.println("Endereco:");
+			this.endereco=Ler.lerString();
+			System.out.println("Telefone:");
+			this.telefone=Ler.lerString();
+			this.cpf = cpf;
+			System.out.println("O funcion‡rio " + this.nome + " foi cadastrado com sucesso.\n");
+
+		}
+		else{
+			System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+		}
+		return validacaoCpf;
+	}
+	
 	//VERIFICAR SENHA
 	public boolean verificarSenha(){
+<<<<<<< HEAD
 		System.out.println("Qual a sua senha?");
 		String leitor = Ler.lerDoTeclado();
+=======
+		System.out.println("Qual Ž a sua senha?");
+		String leitor = Ler.lerString();
+>>>>>>> Rafael
         return leitor.equals(this.senha);
 	}
 
@@ -41,7 +75,7 @@ public class Funcionario {
     	System.out.println("Seja bem-vindo, funcionario");
     	System.out.println("Voce é: A[t]endente, A[d]ministrador ou [O]perador?");
     	
-    	String leitor = Ler.lerDoTeclado().toLowerCase();
+    	String leitor = Ler.lerString().toLowerCase();
     	int saida=0;
         if(leitor.equals("t") | leitor.equals("atendente")){
         	saida = 1;

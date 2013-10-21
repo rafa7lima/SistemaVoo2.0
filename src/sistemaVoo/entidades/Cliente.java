@@ -4,8 +4,12 @@ import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
 
 
+<<<<<<< HEAD
 public class Cliente extends Pessoa {
 	
+=======
+public class Cliente extends PessoaFisica {
+>>>>>>> Rafael
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -16,13 +20,14 @@ public class Cliente extends Pessoa {
 	}
 
 	//Construtor COM 4 PARAMETROS
-	public Cliente(String nomeCliente, String enderecoCliente, String cpfCliente, String telefoneCliente) {
-			this.nome = nomeCliente;
-			this.endereco = enderecoCliente;
-			this.cpf = cpfCliente;
-			this.telefone = telefoneCliente;
+	public Cliente(String nome, String endereco, String cpf, String telefone) {
+			this.nome = nome;
+			this.endereco = endereco;
+			this.cpf = cpf;
+			this.telefone = telefone;
 	}
 	
+<<<<<<< HEAD
 	//CADASTRAR
 	public void cadastrarCliente(){
 			System.out.println("Diga seu CPF (Apenas nœmeros):");
@@ -43,54 +48,50 @@ public class Cliente extends Pessoa {
 			else{
 				System.out.println("CPF invalido. Favor inserir um CPF valido.");
 			}
+=======
+	//Cadastrar
+	public boolean cadastrar(){
+		System.out.println("Diga seu CPF (Apenas nœmeros):");
+		String cpf = Ler.lerString();
+		TesteCpf teste = new TesteCpf();
+		boolean validacaoCpf = teste.ValidarCpf(cpf);
+		if(validacaoCpf == true){
+			System.out.println("Insira os demais dados:");
+			System.out.println("Nome:");
+			this.nome= Ler.lerString();
+			System.out.println("Endereco:");
+			this.endereco=Ler.lerString();
+			System.out.println("Telefone:");
+			this.telefone=Ler.lerString();
+			this.cpf = cpf;
+			System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
+
+>>>>>>> Rafael
 		}
+		else{
+			System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+		}
+		return validacaoCpf;
+	}
 	
 	//MENU
+<<<<<<< HEAD
 	public void menuDoCliente(){
 		System.out.println("Seja bem-vindo, cliente. O que voce gostaria de fazer?");
     	System.out.println("[C]adastrar-se.");	
+=======
+	public void menu(){
+		System.out.println("Seja bem-vindo, cliente. O que voc gostaria de fazer?");
+    	System.out.println("1. Cadastrar-se.");	
+>>>>>>> Rafael
     	
-    	String leitor = Ler.lerDoTeclado().toLowerCase();
+    	int i = Ler.lerInteiro();
     	
-        if(leitor.equals("c")){
-        	this.cadastrarCliente();
+        if(i == 1){
+        	this.cadastrar();
         }
         else
         	System.out.println("Opcao invalida.");
-	}
-	
-
-	//GETTERS E SETTERS	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 	
 

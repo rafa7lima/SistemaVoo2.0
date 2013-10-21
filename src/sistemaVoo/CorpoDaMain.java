@@ -14,7 +14,7 @@ public class CorpoDaMain {
 
 	public static void main(String[] args) { 
 		//CABECALHO
-		System.out.println("QUINTA ETAPA DA ATIVIDADE PRÁTICA");
+		System.out.println("SEXTA ETAPA DA ATIVIDADE PRÁTICA");
 		System.out.println("Disciplina: Orientacao a objetos");
 		System.out.println("Professora Milene");
 		System.out.println("Grupo: 7\n");
@@ -27,7 +27,7 @@ public class CorpoDaMain {
 			System.out.println("Você é: [C]liente ou [F]uncionário?");
 			System.out.println("Para sair, digite [S].");
 			
-			leitor = Ler.lerDoTeclado().toLowerCase();//Qualquer coisa digitada vira caracter minusculo
+			leitor = Ler.lerString().toLowerCase();//Qualquer coisa digitada vira caracter minusculo
 
 			int caso = 0;
 			if (leitor.equals("c")| leitor.equals("cliente")){
@@ -44,7 +44,7 @@ public class CorpoDaMain {
 			switch (caso){
 			case 1: //Cliente
 				Cliente cliente = new Cliente();
-				cliente.menuDoCliente();
+				cliente.menu();
 				break;
 
 			case 2: //Funcionario
