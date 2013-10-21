@@ -13,7 +13,7 @@ public class Operador extends Funcionario {
 		System.out.println("O que você deseja fazer?");
 		System.out.println("1. Cadastrar Voo");
 		
-		int i = Ler.lerNumero();
+		int i = Ler.lerInteiro();
 		if (i == 1){
 			boolean verifica = super.verificarSenha();
 			if(verifica){

@@ -22,7 +22,7 @@ public class Administrador extends Operador {
 			System.out.println("2. Remover passageiro");
 			System.out.println("3. Consultar lista de passageiros");
 			
-			int i = Ler.lerNumero();
+			int i = Ler.lerInteiro();
 			if (i == 1){
 				System.out.println("MŽtodo n‹o implementado.");
 			}
@@ -31,7 +31,7 @@ public class Administrador extends Operador {
 			}
 			if(i==3){
 				System.out.println("Qual o nœmero do voo?");
-				String numeroVoo = Ler.lerDoTeclado();
+				String numeroVoo = Ler.lerString();
 				Voo voo = new Voo(numeroVoo);
 				this.consultarPassageiro(voo);
 			}

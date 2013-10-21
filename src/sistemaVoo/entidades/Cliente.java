@@ -1,15 +1,9 @@
 package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
-import sistemaVoo.testes.TesteCpf;
 
 
-public class Cliente {
-
-	private String nome = " ";
-	private String endereco = " ";
-	private String cpf = "";
-	private String telefone = " ";
+public class Cliente extends PessoaFisica {
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -27,74 +21,27 @@ public class Cliente {
 			this.telefone = telefoneCliente;
 	}
 	
-	//CADASTRAR
-	public void cadastrarCliente(){
-			System.out.println("Diga seu CPF (Apenas números):");
-			String cpf = Ler.lerDoTeclado();
-			TesteCpf teste = new TesteCpf();
-			boolean validacaoCpf = teste.ValidarCpf(cpf);
-			if(validacaoCpf == true){
-				System.out.println("Insira os demais dados:");
-				System.out.println("Nome:");
-				this.nome= Ler.lerDoTeclado();
-				System.out.println("Endereco:");
-				this.endereco=Ler.lerDoTeclado();
-				System.out.println("Telefone:");
-				this.telefone=Ler.lerDoTeclado();
-				this.cpf = cpf;
-				System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
-			}
-			else{
-				System.out.println("CPF inválido. Favor inserir um CPF válido.");
-			}
+	//Cadastrar
+	public boolean cadastrar(){
+		boolean resultadoValidacao = super.cadastrar();
+		if (resultadoValidacao){
+			System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
 		}
+		return resultadoValidacao;
+	}
 	
 	//MENU
-	public void menuDoCliente(){
+	public void menu(){
 		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
-    	System.out.println("[C]adastrar-se.");	
+    	System.out.println("1. Cadastrar-se.");	
     	
-    	String leitor = Ler.lerDoTeclado().toLowerCase();
+    	int i = Ler.lerInteiro();
     	
-        if(leitor.equals("c")){
-        	this.cadastrarCliente();
+        if(i == 1){
+        	this.cadastrar();
         }
         else
         	System.out.println("Opção inválida.");
-	}
-	
-
-	//GETTERS E SETTERS	
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 	
 
