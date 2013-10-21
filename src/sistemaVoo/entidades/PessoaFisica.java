@@ -10,10 +10,6 @@ public abstract class PessoaFisica {
 	protected String cpf = "";
 	protected String telefone = " ";
 	
-	public PessoaFisica() {
-		// TODO Auto-generated constructor stub
-	}
-
 	//CADASTRAR
 	public abstract boolean cadastrar();
 	
