@@ -4,12 +4,7 @@ import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
 
 
-<<<<<<< HEAD
-public class Cliente extends Pessoa {
-	
-=======
 public class Cliente extends PessoaFisica {
->>>>>>> Rafael
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -27,28 +22,6 @@ public class Cliente extends PessoaFisica {
 			this.telefone = telefone;
 	}
 	
-<<<<<<< HEAD
-	//CADASTRAR
-	public void cadastrarCliente(){
-			System.out.println("Diga seu CPF (Apenas números):");
-			String cpf = Ler.lerDoTeclado();
-			TesteCpf teste = new TesteCpf();
-			boolean validacaoCpf = teste.ValidarCpf(cpf);
-			if(validacaoCpf == true){
-				System.out.println("Insira os demais dados:");
-				System.out.println("Nome:");
-				this.nome= Ler.lerDoTeclado();
-				System.out.println("Endereco:");
-				this.endereco=Ler.lerDoTeclado();
-				System.out.println("Telefone:");
-				this.telefone=Ler.lerDoTeclado();
-				this.cpf = cpf;
-				System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
-			}
-			else{
-				System.out.println("CPF invalido. Favor inserir um CPF valido.");
-			}
-=======
 	//Cadastrar
 	public boolean cadastrar(){
 		System.out.println("Diga seu CPF (Apenas números):");
@@ -66,7 +39,6 @@ public class Cliente extends PessoaFisica {
 			this.cpf = cpf;
 			System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
 
->>>>>>> Rafael
 		}
 		else{
 			System.out.println("CPF inválido. Favor inserir um CPF válido.\n");
@@ -75,15 +47,9 @@ public class Cliente extends PessoaFisica {
 	}
 	
 	//MENU
-<<<<<<< HEAD
-	public void menuDoCliente(){
-		System.out.println("Seja bem-vindo, cliente. O que voce gostaria de fazer?");
-    	System.out.println("[C]adastrar-se.");	
-=======
 	public void menu(){
 		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
     	System.out.println("1. Cadastrar-se.");	
->>>>>>> Rafael
     	
     	int i = Ler.lerInteiro();
     	
@@ -91,7 +57,7 @@ public class Cliente extends PessoaFisica {
         	this.cadastrar();
         }
         else
-        	System.out.println("Opcao invalida.");
+        	System.out.println("Opção inválida.");
 	}
 
 	

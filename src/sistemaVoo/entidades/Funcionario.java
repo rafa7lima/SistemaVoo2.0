@@ -55,25 +55,20 @@ public class Funcionario extends PessoaFisica {
 	
 	//VERIFICAR SENHA
 	public boolean verificarSenha(){
-<<<<<<< HEAD
-		System.out.println("Qual a sua senha?");
-		String leitor = Ler.lerDoTeclado();
-=======
 		System.out.println("Qual é a sua senha?");
 		String leitor = Ler.lerString();
->>>>>>> Rafael
         return leitor.equals(this.senha);
 	}
 
 	//CONSULTA PASSAGEIROS
 	public void consultarPassageiros(Voo voo){
-		System.out.println("Voce nao tem permissao para consultar esse tipo de informacao.");
+		System.out.println("Você não tem permissão para consultar esse tipo de informação.");
 	}
 	
 	//MENU COM SAIDA
 	public int menuDoFuncionario(){
-    	System.out.println("Seja bem-vindo, funcionario");
-    	System.out.println("Voce È: A[t]endente, A[d]ministrador ou [O]perador?");
+    	System.out.println("Seja bem-vindo, funcionário");
+    	System.out.println("Você é: A[t]endente, A[d]ministrador ou [O]perador?");
     	
     	String leitor = Ler.lerString().toLowerCase();
     	int saida=0;
@@ -91,7 +86,7 @@ public class Funcionario extends PessoaFisica {
 	
 	//MENU SEM SAIDA (POLIMORFISMO)
 	public void menu(){
-		System.out.println("Bem vindo, funcionario!");
+		System.out.println("Bem vindo, funcionário!");
 	}
 	
 	public String getLogin() {
