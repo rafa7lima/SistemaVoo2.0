@@ -37,6 +37,28 @@ public abstract class PessoaFisica {
 			
 			
 		}
+	
+	//CADASTRAR_TESTE
+	public boolean cadastrar(String cpf){
+			TesteCpf teste = new TesteCpf();
+			boolean validacaoCpf = teste.ValidarCpf(cpf);
+			if(validacaoCpf == true){
+				System.out.println("Insira os dados:");
+				System.out.println("Nome:");
+				this.nome= Ler.lerString();
+				System.out.println("Endereco:");
+				this.endereco=Ler.lerString();
+				System.out.println("Telefone:");
+				this.telefone=Ler.lerString();
+				this.cpf = cpf;
+			}
+			else{
+				System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+			}
+			return validacaoCpf;
+			
+			
+		}
 
 	//GETTERS E SETTERS	
 	public String getNome() {
