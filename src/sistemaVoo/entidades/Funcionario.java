@@ -3,6 +3,7 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
+import sistemaVoo.testes.TesteCpf;
 
 public class Funcionario extends PessoaFisica {
 
@@ -26,11 +27,30 @@ public class Funcionario extends PessoaFisica {
 	
 	//Cadastrar
 	public boolean cadastrar(){
-		boolean resultadoValidacao = super.cadastrar();
-		if (resultadoValidacao){
+		System.out.println("Diga seu CPF (Apenas nœmeros):");
+		String cpf = Ler.lerString();
+		TesteCpf teste = new TesteCpf();
+		boolean validacaoCpf = teste.ValidarCpf(cpf);
+		if(validacaoCpf == true){
+			System.out.println("Insira os demais dados:");
+			System.out.println("Login:");
+			this.login= Ler.lerString();
+			System.out.println("Senha:");
+			this.senha= Ler.lerString();
+			System.out.println("Nome:");
+			this.nome= Ler.lerString();
+			System.out.println("Endereco:");
+			this.endereco=Ler.lerString();
+			System.out.println("Telefone:");
+			this.telefone=Ler.lerString();
+			this.cpf = cpf;
 			System.out.println("O funcion‡rio " + this.nome + " foi cadastrado com sucesso.\n");
+
 		}
-		return resultadoValidacao;
+		else{
+			System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+		}
+		return validacaoCpf;
 	}
 	
 	//VERIFICAR SENHA

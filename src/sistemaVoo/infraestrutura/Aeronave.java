@@ -1,8 +1,8 @@
 package sistemaVoo.infraestrutura;
 
-public class Aviao {
+public class Aeronave {
 
-	public Aviao() {
+	public Aeronave() {
 		// TODO Auto-generated constructor stub
 	}
 

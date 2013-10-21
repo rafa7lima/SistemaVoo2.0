@@ -1,6 +1,7 @@
 package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
+import sistemaVoo.testes.TesteCpf;
 
 
 public class Cliente extends PessoaFisica {
@@ -14,20 +15,35 @@ public class Cliente extends PessoaFisica {
 	}
 
 	//Construtor COM 4 PARAMETROS
-	public Cliente(String nomeCliente, String enderecoCliente, String cpfCliente, String telefoneCliente) {
-			this.nome = nomeCliente;
-			this.endereco = enderecoCliente;
-			this.cpf = cpfCliente;
-			this.telefone = telefoneCliente;
+	public Cliente(String nome, String endereco, String cpf, String telefone) {
+			this.nome = nome;
+			this.endereco = endereco;
+			this.cpf = cpf;
+			this.telefone = telefone;
 	}
 	
 	//Cadastrar
 	public boolean cadastrar(){
-		boolean resultadoValidacao = super.cadastrar();
-		if (resultadoValidacao){
+		System.out.println("Diga seu CPF (Apenas nœmeros):");
+		String cpf = Ler.lerString();
+		TesteCpf teste = new TesteCpf();
+		boolean validacaoCpf = teste.ValidarCpf(cpf);
+		if(validacaoCpf == true){
+			System.out.println("Insira os demais dados:");
+			System.out.println("Nome:");
+			this.nome= Ler.lerString();
+			System.out.println("Endereco:");
+			this.endereco=Ler.lerString();
+			System.out.println("Telefone:");
+			this.telefone=Ler.lerString();
+			this.cpf = cpf;
 			System.out.println("O cliente " + this.nome + " foi cadastrado com sucesso.\n");
+
 		}
-		return resultadoValidacao;
+		else{
+			System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+		}
+		return validacaoCpf;
 	}
 	
 	//MENU

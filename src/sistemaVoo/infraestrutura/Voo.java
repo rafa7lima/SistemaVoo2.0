@@ -11,7 +11,7 @@ public class Voo {
 	private Aeroporto destino;
 	private Horario horarioPartida;
 	private Horario horarioChegada;
-	private Aviao aviaoDoVoo;
+	private Aeronave aviaoDoVoo;
 	private Passageiro[] listaDePassageiros = {};
 	
 	public Voo() {
@@ -23,7 +23,7 @@ public class Voo {
 	}
 
 	public void cadastrarVoo(String numeroVoo, Aeroporto origemVoo, Aeroporto destinoVoo,
-			Horario horarioPartida, Horario horarioChegada, Aviao aviao, Operador operador){
+			Horario horarioPartida, Horario horarioChegada, Aeronave aviao, Operador operador){
 		boolean validacao = operador.verificarSenha();
 		if (validacao){
 			this.numero = numeroVoo;
@@ -75,11 +75,11 @@ public class Voo {
 		this.horarioChegada = horarioChegada;
 	}
 
-	public Aviao getAviaoDoVoo() {
+	public Aeronave getAviaoDoVoo() {
 		return aviaoDoVoo;
 	}
 
-	public void setAviaoDoVoo(Aviao aviaoDoVoo) {
+	public void setAviaoDoVoo(Aeronave aviaoDoVoo) {
 		this.aviaoDoVoo = aviaoDoVoo;
 	}
 

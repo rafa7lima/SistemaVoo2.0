@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ler {
 	
-	public static String leitor;
+	private static String leitor;
 
 	public Ler() { }
 	

@@ -1,7 +1,7 @@
 package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
-import sistemaVoo.infraestrutura.Voo;
+//import sistemaVoo.infraestrutura.Voo;
 
 
 public class Operador extends Funcionario { 
@@ -17,7 +17,7 @@ public class Operador extends Funcionario {
 		if (i == 1){
 			boolean verifica = super.verificarSenha();
 			if(verifica){
-				Voo novoVoo = new Voo();
+				//Voo novoVoo = new Voo();
 				//novoVoo.cadastrarVoo(numeroVoo, origemVoo, destinoVoo, horarioPartida, horarioChegada, aviao, operador)
 				//implementar
 			}else{
