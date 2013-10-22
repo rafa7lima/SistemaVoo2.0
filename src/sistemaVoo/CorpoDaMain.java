@@ -40,7 +40,7 @@ public class CorpoDaMain {
 				testeSairDoLoop = false;
 				caso = 3;
 			}
-
+			
 			switch (caso){
 			case 1: //Cliente
 				Cliente cliente = new Cliente();
