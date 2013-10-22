@@ -1,14 +1,14 @@
 package sistemaVoo.util;
 
-//import java.util.Calendar;
+import java.util.Calendar;
 
 public class Horario {
 
 	private int hora;
 	private int min;
 	
-	/*
-	public void horaAtual(){
+	
+	public void imprimirHoraAtual(){
 	//Utilizando a classe calendario
 		Calendar calendario=Calendar.getInstance();  //Pegando a instancia de Calendar
 		 hora=calendario.get(Calendar.HOUR_OF_DAY); //Variavel int recebe a hora do dia 
@@ -29,7 +29,7 @@ public class Horario {
 			   System.out.printf("\n");
 		   }
 	} 
-	 */
+
 	
 	
 	public Horario(int h,int m) {

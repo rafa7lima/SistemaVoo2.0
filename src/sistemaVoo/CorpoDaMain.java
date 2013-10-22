@@ -6,6 +6,7 @@ import sistemaVoo.entidades.Atendente;
 import sistemaVoo.entidades.Cliente;
 import sistemaVoo.entidades.Funcionario;
 import sistemaVoo.entidades.Operador;
+import sistemaVoo.util.Horario;
 
 
 public class CorpoDaMain {
@@ -14,17 +15,20 @@ public class CorpoDaMain {
 
 	public static void main(String[] args) { 
 		//CABECALHO
-		System.out.println("SEXTA ETAPA DA ATIVIDADE PRÁTICA");
+		System.out.println("SEXTA ETAPA DA ATIVIDADE PRATICA");
 		System.out.println("Disciplina: Orientacao a objetos");
 		System.out.println("Professora Milene");
 		System.out.println("Grupo: 7\n");
+		
+		Horario hora = new Horario(0,0);
+		hora.imprimirHoraAtual();
 
 		String leitor;
 		boolean testeSairDoLoop = true;
 		
 		//LOOP PINCIPAL
 		while(testeSairDoLoop){
-			System.out.println("Você é: [C]liente ou [F]uncionário?");
+			System.out.println("Voce e: [C]liente ou [F]uncionario?");
 			System.out.println("Para sair, digite [S].");
 			
 			leitor = Ler.lerString().toLowerCase();//Qualquer coisa digitada vira caracter minusculo
@@ -40,7 +44,7 @@ public class CorpoDaMain {
 				testeSairDoLoop = false;
 				caso = 3;
 			}
-			
+
 			switch (caso){
 			case 1: //Cliente
 				Cliente cliente = new Cliente();
@@ -63,15 +67,15 @@ public class CorpoDaMain {
 					funcionario.menu();
 				}
 				else{
-					System.out.println("Insira um caractere válido.\n");
+					System.out.println("Insira um caractere valido.\n");
 				}
 
 				break;
 			case 3: //Sair
-				System.out.println("Até a próxima!");
+				System.out.println("Ate a proxima!");
 				break;
 			default: //Outra coisa
-				System.out.println("Insira um caracter válido!\n");
+				System.out.println("Insira um caracter valido!\n");
 				break;
 			}
 		}
