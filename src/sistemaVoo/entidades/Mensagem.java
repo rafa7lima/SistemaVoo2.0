@@ -14,7 +14,7 @@ package sistemaVoo.entidades;
 		}
 		public static ArrayList<String> ListaMensagem = new ArrayList<String>();
 
-		public void postarmensagem(String mensagem,String remetente){
+		public void postarmensagem(String mensagem){
 			
 		}
 		

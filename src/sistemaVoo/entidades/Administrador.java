@@ -2,6 +2,7 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
+import sistemaVoo.entidades.Mensagem;
 
 public class Administrador extends Operador {
 
@@ -38,6 +39,9 @@ public class Administrador extends Operador {
 			}
 			if(i == 4){
 				System.out.println("Metodo nao implementado. ");
+				Mensagem.ListaMensagem.size();
+				Mensagem.ListaMensagem.get(i);
+				Mensagem.ListaMensagem.clear();
 				
 			}
 		}

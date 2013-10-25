@@ -6,6 +6,7 @@ import sistemaVoo.entidades.PessoaFisica;
 import sistemaVoo.entidades.Mensagem;
 
 public class Cliente extends PessoaFisica {
+	private String post =""; 
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -59,11 +60,14 @@ public class Cliente extends PessoaFisica {
         	this.cadastrar();
         }
         if(i == 2){
-        	
+        	System.out.println("Diga seu CPF (Apenas nœmeros):");
+    		String post = Ler.lerString();      	
+        	        	
         	public void postarmensagem(String mensagem){
-        		Mensagem mensagem = new Mensagem();
-        		mensagem.postar(mensagem,this.nome);
-        
+        		
+        		
+        		Mensagem mensagem1 = new Mensagem();
+        		mensagem1.ListaMensagem.add(post);
         		
         	}
         }
