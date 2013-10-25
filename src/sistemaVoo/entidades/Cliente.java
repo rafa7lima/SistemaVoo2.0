@@ -2,7 +2,8 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
-
+import sistemaVoo.entidades.PessoaFisica;
+import sistemaVoo.entidades.Mensagem;
 
 public class Cliente extends PessoaFisica {
 
@@ -41,23 +42,33 @@ public class Cliente extends PessoaFisica {
 
 		}
 		else{
-			System.out.println("CPF inválido. Favor inserir um CPF válido.\n");
+			System.out.println("CPF invalido. Favor inserir um CPF válido.\n");
 		}
 		return validacaoCpf;
 	}
 	
 	//MENU
 	public void menu(){
-		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
-    	System.out.println("1. Cadastrar-se.");	
+		System.out.println("Seja bem-vindo, cliente. O que voce gostaria de fazer?");
+    	System.out.println("1. Cadastrar-se.");
+    	System.out.println("2. escreva uma mensagem ou avaliacao para nosso sistema");
     	
     	int i = Ler.lerInteiro();
     	
         if(i == 1){
         	this.cadastrar();
         }
+        if(i == 2){
+        	
+        	public void postarmensagem(String mensagem){
+        		Mensagem mensagem = new Mensagem();
+        		mensagem.postar(mensagem,this.nome);
+        
+        		
+        	}
+        }
         else
-        	System.out.println("Opção inválida.");
+        	System.out.println("Opcao invalida.");
 	}
 
 	
