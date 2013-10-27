@@ -2,6 +2,8 @@ package sistemaVoo.util;
 
 
 
+
+
 public class Data {
 
 	    //Atributos
@@ -20,8 +22,7 @@ public class Data {
 			this.mes = m;
 			this.ano = a;
 		}
-		
-		
+			
 		public int getDia() {
 			return dia;
 		}

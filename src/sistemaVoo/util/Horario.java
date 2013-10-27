@@ -1,6 +1,7 @@
 package sistemaVoo.util;
 
 import java.util.Calendar;
+import java.text.DateFormat;
 
 public class Horario {
 
@@ -10,7 +11,7 @@ public class Horario {
 	
 	public void imprimirHoraAtual(){
 		//Utilizando a classe calendario
-		Calendar calendario=Calendar.getInstance();  //Pegando a instancia de Calendar
+		Calendar calendario=Calendar.getInstance();  //Pegando a instancia de Calendar, ela é abstrata e não pode ser instanciada com new
 		hora=calendario.get(Calendar.HOUR_OF_DAY); //Variavel int recebe a hora do dia 
 		min=calendario.get(Calendar.MINUTE);
 
