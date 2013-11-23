@@ -63,13 +63,7 @@ public class Cliente extends PessoaFisica {
         	System.out.println("Diga seu CPF (Apenas nœmeros):");
     		String post = Ler.lerString();      	
         	        	
-        	public void postarmensagem(String mensagem){
-        		
-        		
-        		Mensagem mensagem1 = new Mensagem();
-        		mensagem1.ListaMensagem.add(post);
-        		
-        	}
+        	
         }
         else
         	System.out.println("Opcao invalida.");
