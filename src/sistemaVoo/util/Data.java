@@ -1,9 +1,6 @@
 package sistemaVoo.util;
 
 
-
-
-
 public class Data {
 
 	    //Atributos

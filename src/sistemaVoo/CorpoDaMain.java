@@ -1,13 +1,11 @@
 package sistemaVoo;
 
-
 import sistemaVoo.entidades.Administrador;
 import sistemaVoo.entidades.Atendente;
 import sistemaVoo.entidades.Cliente;
 import sistemaVoo.entidades.Funcionario;
 import sistemaVoo.entidades.Operador;
 import sistemaVoo.util.Horario;
-
 
 public class CorpoDaMain {
 
@@ -32,7 +30,6 @@ public class CorpoDaMain {
 			System.out.println("Para sair, digite [S].");
 			
 			leitor = Ler.lerString().toLowerCase();//Qualquer coisa digitada vira caracter minusculo
-
 			int caso = 0;
 			if (leitor.equals("c")| leitor.equals("cliente")){
 				caso = 1;

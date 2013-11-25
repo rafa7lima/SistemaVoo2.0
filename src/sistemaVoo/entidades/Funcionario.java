@@ -27,7 +27,7 @@ public class Funcionario extends PessoaFisica {
 	
 	//Cadastrar
 	public boolean cadastrar(){
-		System.out.println("Diga seu CPF (Apenas números):");
+		System.out.println("Diga seu CPF (Apenas numeros):");
 		String cpf = Ler.lerString();
 		TesteCpf teste = new TesteCpf();
 		boolean validacaoCpf = teste.ValidarCpf(cpf);
@@ -44,31 +44,31 @@ public class Funcionario extends PessoaFisica {
 			System.out.println("Telefone:");
 			this.telefone=Ler.lerString();
 			this.cpf = cpf;
-			System.out.println("O funcionário " + this.nome + " foi cadastrado com sucesso.\n");
+			System.out.println("O funcionario " + this.nome + " foi cadastrado com sucesso.\n");
 
 		}
 		else{
-			System.out.println("CPF inválido. Favor inserir um CPF válido.\n");
+			System.out.println("CPF invalido. Favor inserir um CPF valido.\n");
 		}
 		return validacaoCpf;
 	}
 	
 	//VERIFICAR SENHA
 	public boolean verificarSenha(){
-		System.out.println("Qual é a sua senha?");
+		System.out.println("Qual eh a sua senha?");
 		String leitor = Ler.lerString();
         return leitor.equals(this.senha);
 	}
 
 	//CONSULTA PASSAGEIROS
 	public void consultarPassageiros(Voo voo){
-		System.out.println("Você não tem permissão para consultar esse tipo de informação.");
+		System.out.println("Voce nao tem permissao para consultar esse tipo de informacao.");
 	}
 	
 	//MENU COM SAIDA
 	public int menuDoFuncionario(){
-    	System.out.println("Seja bem-vindo, funcionário");
-    	System.out.println("Você é: A[t]endente, A[d]ministrador ou [O]perador?");
+    	System.out.println("Seja bem-vindo, funcionario");
+    	System.out.println("Voce eh: A[t]endente, A[d]ministrador ou [O]perador?");
     	
     	String leitor = Ler.lerString().toLowerCase();
     	int saida=0;
@@ -86,7 +86,7 @@ public class Funcionario extends PessoaFisica {
 	
 	//MENU SEM SAIDA (POLIMORFISMO)
 	public void menu(){
-		System.out.println("Bem vindo, funcionário!");
+		System.out.println("Bem vindo, funcionario!");
 	}
 	
 	public String getLogin() {

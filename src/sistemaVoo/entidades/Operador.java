@@ -10,7 +10,7 @@ public class Operador extends Funcionario {
 		super();
 	}
 	public void menu(){
-		System.out.println("O que você deseja fazer?");
+		System.out.println("O que voce deseja fazer?");
 		System.out.println("1. Cadastrar Voo");
 		
 		int i = Ler.lerInteiro();
@@ -21,7 +21,7 @@ public class Operador extends Funcionario {
 				//novoVoo.cadastrarVoo(numeroVoo, origemVoo, destinoVoo, horarioPartida, horarioChegada, aviao, operador)
 				//implementar
 			}else{
-				System.out.println("senha inválida.");
+				System.out.println("senha invalida.");
 			}
 			
 		}

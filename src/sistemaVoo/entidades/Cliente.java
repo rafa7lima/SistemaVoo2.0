@@ -2,11 +2,9 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
-import sistemaVoo.entidades.PessoaFisica;
-import sistemaVoo.entidades.Mensagem;
+
 
 public class Cliente extends PessoaFisica {
-	private String post =""; 
 
 	//Construtor SEM PARAMETRO
 	public Cliente() { }
@@ -26,7 +24,7 @@ public class Cliente extends PessoaFisica {
 	
 	//Cadastrar
 	public boolean cadastrar(){
-		System.out.println("Diga seu CPF (Apenas números):");
+		System.out.println("Diga seu CPF (Apenas numeros):");
 		String cpf = Ler.lerString();
 		TesteCpf teste = new TesteCpf();
 		boolean validacaoCpf = teste.ValidarCpf(cpf);
@@ -43,33 +41,20 @@ public class Cliente extends PessoaFisica {
 
 		}
 		else{
-			System.out.println("CPF invalido. Favor inserir um CPF válido.\n");
+			System.out.println("CPF invalido. Favor inserir um CPF valido.\n");
 		}
 		return validacaoCpf;
 	}
 	
 	//MENU
 	public void menu(){
-		System.out.println("Seja bem-vindo, cliente. O que voce gostaria de fazer?");
-    	System.out.println("1. Cadastrar-se.");
-    	System.out.println("2. escreva uma mensagem ou avaliacao para nosso sistema");
+		System.out.println("Seja bem-vindo, cliente. O que você gostaria de fazer?");
+    	System.out.println("1. Cadastrar-se.");	
     	
     	int i = Ler.lerInteiro();
     	
         if(i == 1){
         	this.cadastrar();
-        }
-        if(i == 2){
-        	System.out.println("Diga seu CPF (Apenas números):");
-    		String post = Ler.lerString();      	
-        	        	
-        	public void postarmensagem(String mensagem){
-        		
-        		
-        		Mensagem mensagem1 = new Mensagem();
-        		mensagem1.ListaMensagem.add(post);
-        		
-        	}
         }
         else
         	System.out.println("Opcao invalida.");
