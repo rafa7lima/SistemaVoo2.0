@@ -6,12 +6,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JList;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenuCliente extends JFrame {
 
@@ -48,6 +52,16 @@ public class MenuCliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	private void groupButton(JRadioButton jr1, JRadioButton jr2){
+		
+		ButtonGroup bg1 = new ButtonGroup();
+		
+		bg1.add(jr1);
+		bg1.add(jr2);
+		
+	}
+	
 	public MenuCliente() {
 		setTitle("Menu do Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,17 +75,37 @@ public class MenuCliente extends JFrame {
 		rdbtnIdaEVolta.setBounds(22, 17, 141, 23);
 		rdbtnIdaEVolta.setSelected(true);
 		contentPane.add(rdbtnIdaEVolta);
+		// Acao de selecionar "Ida e volta"
+		rdbtnIdaEVolta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblVolta.setVisible(true);
+				textField.setVisible(true);
+				textField_1.setVisible(true);
+				textField_2.setVisible(true);
+			}
+		});
 		
 		JRadioButton rdbtnSIda = new JRadioButton("S\u00F3 ida");
 		rdbtnSIda.setBounds(149, 17, 141, 23);
 		contentPane.add(rdbtnSIda);
+		// Acao de selecionar "So ida"
+		rdbtnSIda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblVolta.setVisible(false);
+				textField.setVisible(false);
+				textField_1.setVisible(false);
+				textField_2.setVisible(false);
+			}
+		});
+		
+		//Agrupar RadioButtons 
+		groupButton(rdbtnIdaEVolta,rdbtnSIda);
 		
 		JLabel lblOrigem = new JLabel("Origem");
 		lblOrigem.setBounds(22, 52, 61, 16);
 		contentPane.add(lblOrigem);
 		
 		JLabel lblDestino = new JLabel("Destino");
-		lblDestino.setVisible(false);
 		lblDestino.setBounds(22, 80, 61, 16);
 		contentPane.add(lblDestino);
 		
@@ -85,7 +119,6 @@ public class MenuCliente extends JFrame {
 		txtDigiteACidade.setColumns(10);
 		
 		txtDigiteACidade_1 = new JTextField();
-		txtDigiteACidade_1.setVisible(false);
 		txtDigiteACidade_1.setText("Digite a cidade de destino");
 		txtDigiteACidade_1.setForeground(Color.LIGHT_GRAY);
 		txtDigiteACidade_1.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
@@ -166,5 +199,13 @@ public class MenuCliente extends JFrame {
 		textField_4.setColumns(10);
 		textField_4.setBounds(100, 196, 55, 28);
 		contentPane.add(textField_4);
+		
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnPesquisar.setBounds(277, 197, 117, 29);
+		contentPane.add(btnPesquisar);
 	}
 }
