@@ -21,11 +21,7 @@ public class Ler {
 				i = Integer.parseInt(lerString());
 				erro = false;
 			}catch(NumberFormatException e){
-<<<<<<< HEAD
 				System.out.println("Insira um valor inteiro.");
-=======
-				System.out.println("Insira um numero valido.");
->>>>>>> master
 				erro = true;
 			}
 		}while(erro);

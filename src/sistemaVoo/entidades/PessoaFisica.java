@@ -28,7 +28,7 @@ public abstract class PessoaFisica {
 				this.cpf = cpf;
 			}
 			else{
-				System.out.println("CPF inv‡lido. Favor inserir um CPF v‡lido.\n");
+				System.out.println("CPF invalido. Favor inserir um CPF valido.\n");
 			}
 			return validacaoCpf;
 			
