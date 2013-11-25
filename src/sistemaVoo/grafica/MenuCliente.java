@@ -16,6 +16,7 @@ import javax.swing.JList;
 import javax.swing.JButton;
 
 import sistemaVoo.util.Data;
+import sistemaVoo.util.Pesquisa;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -35,6 +36,7 @@ public class MenuCliente extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private boolean idaEVolta=true;
 
 	/**
 	 * Launch the application.
@@ -79,12 +81,14 @@ public class MenuCliente extends JFrame {
 		rdbtnIdaEVolta.setSelected(true);
 		contentPane.add(rdbtnIdaEVolta);
 		// Acao de selecionar "Ida e volta"
+		
 		rdbtnIdaEVolta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				lblVolta.setVisible(true);
 				textField.setVisible(true);
 				textField_1.setVisible(true);
 				textField_2.setVisible(true);
+				idaEVolta=true;
 			}
 		});
 		
@@ -98,6 +102,7 @@ public class MenuCliente extends JFrame {
 				textField.setVisible(false);
 				textField_1.setVisible(false);
 				textField_2.setVisible(false);
+				idaEVolta=false;
 			}
 		});
 		
@@ -191,6 +196,19 @@ public class MenuCliente extends JFrame {
 		JButton btnPesquisar = new JButton("Pesquisar");
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Data dataida = new Data(Integer.parseInt(txtDd.getText()), Integer.parseInt(txtMs.getText()), Integer.parseInt(txtAno.getText()));
+				Data datavolta;
+				if(idaEVolta){
+					datavolta = new Data(Integer.parseInt(textField.getText()), Integer.parseInt(textField_1.getText()), Integer.parseInt(textField_2.getText()));			
+				}else{
+					datavolta = new Data(0,0,0);
+				}
+				Pesquisa pesquisa = new Pesquisa(txtDigiteACidade.getText(), txtDigiteACidade_1.getText(), dataida, datavolta, Integer.parseInt(textField_3.getText()), Integer.parseInt(textField_4.getText()));
+				String[] resultado = pesquisa.pesquisar();
+				MenuPesquisa menuPesquisa = new MenuPesquisa();
+				menuPesquisa.dispose();
+				MenuPesquisa.main(resultado);
+				
 			}
 		});
 		btnPesquisar.setBounds(277, 197, 117, 29);
