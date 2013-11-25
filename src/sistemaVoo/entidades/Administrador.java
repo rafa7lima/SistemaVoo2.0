@@ -2,6 +2,7 @@ package sistemaVoo.entidades;
 
 import sistemaVoo.Ler;
 import sistemaVoo.infraestrutura.Voo;
+import sistemaVoo.entidades.Mensagem;
 
 public class Administrador extends Operador {
 
@@ -17,23 +18,31 @@ public class Administrador extends Operador {
 		}
 		
 		public void menu(){
-			System.out.println("O que você deseja fazer?");
+			System.out.println("O que voce deseja fazer?");
 			System.out.println("1. Remover voo");
 			System.out.println("2. Remover passageiro");
 			System.out.println("3. Consultar lista de passageiros");
+			System.out.println("4. listar as mensagens do dia");
 			
 			int i = Ler.lerInteiro();
 			if (i == 1){
-				System.out.println("Método não implementado.");
+				System.out.println("Metodo nao implementado.");
 			}
 			if(i == 2){
-				System.out.println("Método não implementado.");
+				System.out.println("Metodo nao implementado.");
 			}
 			if(i==3){
-				System.out.println("Qual o número do voo?");
+				System.out.println("Qual o numero do voo?");
 				String numeroVoo = Ler.lerString();
 				Voo voo = new Voo(numeroVoo);
 				this.consultarPassageiro(voo);
+			}
+			if(i == 4){
+				System.out.println("Metodo nao implementado. ");
+				Mensagem.ListaMensagem.size();
+				Mensagem.ListaMensagem.get(i);
+				Mensagem.ListaMensagem.clear();
+				
 			}
 		}
 

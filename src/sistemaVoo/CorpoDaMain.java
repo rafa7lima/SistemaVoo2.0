@@ -5,6 +5,7 @@ import sistemaVoo.entidades.Atendente;
 import sistemaVoo.entidades.Cliente;
 import sistemaVoo.entidades.Funcionario;
 import sistemaVoo.entidades.Operador;
+import sistemaVoo.util.Horario;
 
 public class CorpoDaMain {
 
@@ -16,6 +17,9 @@ public class CorpoDaMain {
 		System.out.println("Disciplina: Orientacao a objetos");
 		System.out.println("Professora Milene");
 		System.out.println("Grupo: 7\n");
+		
+		Horario hora = new Horario(0,0);
+		hora.imprimirHoraAtual();
 
 		String leitor;
 		boolean testeSairDoLoop = true;
