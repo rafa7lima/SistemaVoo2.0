@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -48,6 +49,16 @@ public class MenuCliente extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	private void groupButton(JRadioButton jr1, JRadioButton jr2){
+		
+		ButtonGroup bg1 = new ButtonGroup();
+		
+		bg1.add(jr1);
+		bg1.add(jr2);
+		
+	}
+	
 	public MenuCliente() {
 		setTitle("Menu do Cliente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,6 +76,8 @@ public class MenuCliente extends JFrame {
 		JRadioButton rdbtnSIda = new JRadioButton("S\u00F3 ida");
 		rdbtnSIda.setBounds(149, 17, 141, 23);
 		contentPane.add(rdbtnSIda);
+		
+		groupButton(rdbtnIdaEVolta,rdbtnSIda);
 		
 		JLabel lblOrigem = new JLabel("Origem");
 		lblOrigem.setBounds(22, 52, 61, 16);
