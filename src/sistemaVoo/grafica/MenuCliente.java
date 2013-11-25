@@ -14,6 +14,9 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JList;
 import javax.swing.JButton;
+
+import sistemaVoo.util.Data;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -110,42 +113,34 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblDestino);
 		
 		txtDigiteACidade = new JTextField();
-		txtDigiteACidade.setText("Digite a cidade de origem");
+		txtDigiteACidade.setText("Bras’lia");
 		txtDigiteACidade.setToolTipText("");
-		txtDigiteACidade.setForeground(Color.LIGHT_GRAY);
-		txtDigiteACidade.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
 		txtDigiteACidade.setBounds(93, 46, 329, 28);
 		contentPane.add(txtDigiteACidade);
 		txtDigiteACidade.setColumns(10);
 		
 		txtDigiteACidade_1 = new JTextField();
-		txtDigiteACidade_1.setText("Digite a cidade de destino");
-		txtDigiteACidade_1.setForeground(Color.LIGHT_GRAY);
-		txtDigiteACidade_1.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
 		txtDigiteACidade_1.setColumns(10);
 		txtDigiteACidade_1.setBounds(95, 74, 329, 28);
 		contentPane.add(txtDigiteACidade_1);
 		
+		//Determina dia atual
+		Data data = Data.obterAtual();
+		
 		txtDd = new JTextField();
-		txtDd.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
-		txtDd.setForeground(Color.LIGHT_GRAY);
-		txtDd.setText("dia");
+		txtDd.setText(String.valueOf(data.getDia()));
 		txtDd.setBounds(20, 132, 40, 28);
 		contentPane.add(txtDd);
 		txtDd.setColumns(10);
 		
 		txtMs = new JTextField();
-		txtMs.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
-		txtMs.setForeground(Color.LIGHT_GRAY);
-		txtMs.setText("m\u00EAs");
+		txtMs.setText(String.valueOf(data.getMes()));
 		txtMs.setColumns(10);
 		txtMs.setBounds(62, 132, 40, 28);
 		contentPane.add(txtMs);
 		
 		txtAno = new JTextField();
-		txtAno.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
-		txtAno.setForeground(Color.LIGHT_GRAY);
-		txtAno.setText("ano");
+		txtAno.setText(String.valueOf(data.getAno()));
 		txtAno.setColumns(10);
 		txtAno.setBounds(104, 132, 55, 28);
 		contentPane.add(txtAno);
@@ -159,25 +154,16 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblVolta);
 		
 		textField = new JTextField();
-		textField.setText("dia");
-		textField.setForeground(Color.LIGHT_GRAY);
-		textField.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
 		textField.setColumns(10);
 		textField.setBounds(190, 132, 40, 28);
 		contentPane.add(textField);
 		
 		textField_1 = new JTextField();
-		textField_1.setText("m\u00EAs");
-		textField_1.setForeground(Color.LIGHT_GRAY);
-		textField_1.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
 		textField_1.setColumns(10);
 		textField_1.setBounds(232, 132, 40, 28);
 		contentPane.add(textField_1);
 		
 		textField_2 = new JTextField();
-		textField_2.setText("ano");
-		textField_2.setForeground(Color.LIGHT_GRAY);
-		textField_2.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
 		textField_2.setColumns(10);
 		textField_2.setBounds(274, 132, 55, 28);
 		contentPane.add(textField_2);
@@ -187,6 +173,7 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblAdultos);
 		
 		textField_3 = new JTextField();
+		textField_3.setText("1");
 		textField_3.setBounds(20, 196, 55, 28);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
@@ -196,6 +183,7 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblCrianas);
 		
 		textField_4 = new JTextField();
+		textField_4.setText("0");
 		textField_4.setColumns(10);
 		textField_4.setBounds(100, 196, 55, 28);
 		contentPane.add(textField_4);
