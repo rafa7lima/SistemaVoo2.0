@@ -52,20 +52,20 @@ public class MenuPesquisa extends JFrame {
 		lblDestino.setBounds(6, 56, 131, 16);
 		contentPane.add(lblDestino);
 		
-		JLabel lblDataDaIda = new JLabel("Data da ida:");
-		lblDataDaIda.setBounds(162, 34, 96, 16);
+		JLabel lblDataDaIda = new JLabel("Data da ida: " + args[2]);
+		lblDataDaIda.setBounds(149, 34, 188, 16);
 		contentPane.add(lblDataDaIda);
 		
-		JLabel lblDataDaVolta = new JLabel("Data da volta:");
-		lblDataDaVolta.setBounds(162, 56, 96, 16);
+		JLabel lblDataDaVolta = new JLabel("Data da volta: " + args[3]);
+		lblDataDaVolta.setBounds(149, 56, 188, 16);
 		contentPane.add(lblDataDaVolta);
 		
-		JLabel lblAdultos = new JLabel("Adultos:");
-		lblAdultos.setBounds(322, 34, 61, 16);
+		JLabel lblAdultos = new JLabel("Adultos: " + args[4]);
+		lblAdultos.setBounds(349, 34, 95, 16);
 		contentPane.add(lblAdultos);
 		
-		JLabel lblCrianas = new JLabel("Crian\u00E7as:");
-		lblCrianas.setBounds(322, 56, 61, 16);
+		JLabel lblCrianas = new JLabel("Crian\u00E7as: " + args[5]);
+		lblCrianas.setBounds(349, 56, 95, 16);
 		contentPane.add(lblCrianas);
 	}
 }
