@@ -97,6 +97,14 @@ public class Voo {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
+
+	public int getMaxPassageiros() {
+		return maxPassageiros;
+	}
+
+	public void setMaxPassageiros(int maxPassageiros) {
+		this.maxPassageiros = maxPassageiros;
+	}
 	
 	
 
