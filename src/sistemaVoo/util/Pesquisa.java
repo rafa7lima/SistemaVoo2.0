@@ -1,5 +1,9 @@
 package sistemaVoo.util;
 
+import java.util.ArrayList;
+
+import sistemaVoo.infraestrutura.Voo;
+
 public class Pesquisa {
 
 	private String origem;
@@ -20,8 +24,42 @@ public class Pesquisa {
 	}
 	
 	public String[] pesquisar(){
-		String[] string = {"a","b"};
-		return string;
+		
+		// Aqui seria preciso acessar o BD. Pra simplificar, usaremos um array de voos
+		Voo voo1 = new Voo("A100");
+		Voo voo2 = new Voo("B200");
+		Voo voo3 = new Voo("C300");
+		
+		Horario hora1 = new Horario(8,10);
+		Horario hora2 = new Horario(9,50);
+		voo1.cadastrarVoo("A100", "Bras’lia", "Congonhas", hora1, hora2, 300);
+		voo1.setPreco(343);
+		
+		hora1 = new Horario(10,30);
+		hora2 = new Horario(12,10);
+		voo2.cadastrarVoo("B200", "Congonhas", "Bras’lia", hora1, hora2, 300);
+		voo2.setPreco(249);
+		
+		hora1 = new Horario(19,55);
+		hora2 = new Horario(21,45);
+		voo3.cadastrarVoo("C300", "Bras’lia", "Gale‹o", hora1, hora2, 200);
+		voo3.setPreco(138);
+		
+		Voo[] BD = {voo1,voo2,voo3};
+		ArrayList<Voo> list = new ArrayList<Voo>();
+		
+		for(int i = 0;i<BD.length;i++){
+			if(this.origem.equals(BD[i].getOrigem())){
+				if(this.destino.equals(BD[i].getDestino())){
+					list.add(BD[i]);
+							
+				}	
+		}
+	}
+
+
+		String[] resultado = {origem, destino};
+		return resultado;
 	}
 	
 

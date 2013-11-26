@@ -20,12 +20,11 @@ import sistemaVoo.util.Pesquisa;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class MenuCliente extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtDigiteACidade;
-	private JTextField txtDigiteACidade_1;
 	private JTextField txtDd;
 	private JTextField txtMs;
 	private JTextField txtAno;
@@ -37,6 +36,7 @@ public class MenuCliente extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private boolean idaEVolta=true;
+	private JComboBox comboBox_1;
 
 	/**
 	 * Launch the application.
@@ -117,18 +117,6 @@ public class MenuCliente extends JFrame {
 		lblDestino.setBounds(22, 80, 61, 16);
 		contentPane.add(lblDestino);
 		
-		txtDigiteACidade = new JTextField();
-		txtDigiteACidade.setText("Bras’lia");
-		txtDigiteACidade.setToolTipText("");
-		txtDigiteACidade.setBounds(93, 46, 329, 28);
-		contentPane.add(txtDigiteACidade);
-		txtDigiteACidade.setColumns(10);
-		
-		txtDigiteACidade_1 = new JTextField();
-		txtDigiteACidade_1.setColumns(10);
-		txtDigiteACidade_1.setBounds(95, 74, 329, 28);
-		contentPane.add(txtDigiteACidade_1);
-		
 		//Determina dia atual
 		Data data = Data.obterAtual();
 		
@@ -193,6 +181,15 @@ public class MenuCliente extends JFrame {
 		textField_4.setBounds(100, 196, 55, 28);
 		contentPane.add(textField_4);
 		
+		String[] opcoes = {"Brasilia", "Congonhas", "Gale‹o"};
+		final JComboBox comboBox = new JComboBox(opcoes);
+		comboBox.setBounds(95, 48, 329, 27);
+		contentPane.add(comboBox);
+		
+		comboBox_1 = new JComboBox(opcoes);
+		comboBox_1.setBounds(95, 76, 329, 27);
+		contentPane.add(comboBox_1);
+		
 		JButton btnPesquisar = new JButton("Pesquisar");
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -203,9 +200,9 @@ public class MenuCliente extends JFrame {
 				}else{
 					datavolta = new Data(0,0,0);
 				}
-				Pesquisa pesquisa = new Pesquisa(txtDigiteACidade.getText(), txtDigiteACidade_1.getText(), dataida, datavolta, Integer.parseInt(textField_3.getText()), Integer.parseInt(textField_4.getText()));
+				Pesquisa pesquisa = new Pesquisa((String)comboBox.getSelectedItem(), (String)comboBox_1.getSelectedItem(), dataida, datavolta, Integer.parseInt(textField_3.getText()), Integer.parseInt(textField_4.getText()));
 				String[] resultado = pesquisa.pesquisar();
-				MenuPesquisa menuPesquisa = new MenuPesquisa();
+				MenuPesquisa menuPesquisa = new MenuPesquisa(resultado);
 				menuPesquisa.dispose();
 				MenuPesquisa.main(resultado);
 				
@@ -213,5 +210,6 @@ public class MenuCliente extends JFrame {
 		});
 		btnPesquisar.setBounds(277, 197, 117, 29);
 		contentPane.add(btnPesquisar);
+
 	}
 }
