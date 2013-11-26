@@ -57,8 +57,10 @@ public class Pesquisa {
 		}
 	}
 
-
-		String[] resultado = {origem, destino};
+		
+		String stIda = ida.getDia() + "/" + ida.getMes() + "/" + ida.getAno();
+		String stVolta = volta.getDia() + "/" + volta.getMes() + "/" + volta.getAno();
+		String[] resultado = {origem, destino, stIda, stVolta, adultos + "", criancas + ""};
 		return resultado;
 	}
 	
