@@ -7,12 +7,14 @@ import sistemaVoo.util.Horario;
 
 public class Voo {
 	private String numero;
-	private Aeroporto origem;
-	private Aeroporto destino;
+	private String origem;
+	private String destino;
 	private Horario horarioPartida;
 	private Horario horarioChegada;
 	private Aeronave aviaoDoVoo;
+	private int maxPassageiros;
 	private Passageiro[] listaDePassageiros = {};
+	private float preco;
 	
 	public Voo() {
 		// TODO Auto-generated constructor stub
@@ -22,17 +24,14 @@ public class Voo {
 		this.numero = numeroVoo;
 	}
 
-	public void cadastrarVoo(String numeroVoo, Aeroporto origemVoo, Aeroporto destinoVoo,
-			Horario horarioPartida, Horario horarioChegada, Aeronave aviao, Operador operador){
-		boolean validacao = operador.verificarSenha();
-		if (validacao){
-			this.numero = numeroVoo;
-			this.origem = origemVoo;
-			this.destino = destinoVoo;
-			this.horarioPartida = horarioPartida;
-			this.horarioChegada = horarioChegada;
-			this.aviaoDoVoo = aviao;
-		}
+	public void cadastrarVoo(String numeroVoo, String origemVoo, String destinoVoo,
+			Horario horarioPartida, Horario horarioChegada, int max){
+		this.numero = numeroVoo;
+		this.origem = origemVoo;
+		this.destino = destinoVoo;
+		this.horarioPartida = horarioPartida;
+		this.horarioChegada = horarioChegada;
+		this.maxPassageiros = max;
 	}
 	
 	public String getNumero() {
@@ -43,19 +42,19 @@ public class Voo {
 		this.numero = numero;
 	}
 
-	public Aeroporto getOrigem() {
+	public String getOrigem() {
 		return origem;
 	}
 
-	public void setOrigem(Aeroporto origem) {
+	public void setOrigem(String origem) {
 		this.origem = origem;
 	}
 
-	public Aeroporto getDestino() {
+	public String getDestino() {
 		return destino;
 	}
 
-	public void setDestino(Aeroporto destino) {
+	public void setDestino(String destino) {
 		this.destino = destino;
 	}
 
@@ -89,6 +88,14 @@ public class Voo {
 
 	public void setListaDePassageiros(Passageiro[] listaDePassageiros) {
 		this.listaDePassageiros = listaDePassageiros;
+	}
+
+	public float getPreco() {
+		return preco;
+	}
+
+	public void setPreco(float preco) {
+		this.preco = preco;
 	}
 	
 	
