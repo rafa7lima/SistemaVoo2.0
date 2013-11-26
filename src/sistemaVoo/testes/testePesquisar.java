@@ -34,6 +34,7 @@ public class testePesquisar {
 			System.out.println(resultado[i]);
 		}
 		
+		
 		assertEquals(resultado[0], "Bras’lia");
 		assertEquals(resultado[1], "Congonhas");
 		assertEquals(resultado[2], "25/12/2013");

@@ -34,16 +34,19 @@ public class Pesquisa {
 		Horario hora2 = new Horario(9,50);
 		voo1.cadastrarVoo("A100", "Bras’lia", "Congonhas", hora1, hora2, 300);
 		voo1.setPreco(343);
+		//System.out.println("voo1 cadastrado");
 
 		hora1 = new Horario(10,30);
 		hora2 = new Horario(12,10);
 		voo2.cadastrarVoo("B200", "Congonhas", "Bras’lia", hora1, hora2, 300);
 		voo2.setPreco(249);
+		//System.out.println("voo2 cadastrado");
 
 		hora1 = new Horario(19,55);
 		hora2 = new Horario(21,45);
 		voo3.cadastrarVoo("C300", "Bras’lia", "Gale‹o", hora1, hora2, 200);
 		voo3.setPreco(138);
+		//System.out.println("voo3 cadastrado");
 
 		Voo[] BD = {voo1,voo2,voo3};
 		ArrayList<Voo> list = new ArrayList<Voo>();
@@ -61,9 +64,10 @@ public class Pesquisa {
 			}
 		}
 		
+		
 		//Definindo a saida do metodo
 
-		int tamanhoArrayResultado = 6 + 4*BD.length;
+		int tamanhoArrayResultado = 6 + 4*list.size();
 		String resultado[] = new String[tamanhoArrayResultado];
 		
 		String stIda = ida.getDia() + "/" + ida.getMes() + "/" + ida.getAno();
@@ -78,17 +82,17 @@ public class Pesquisa {
 		resultado[3] = stVolta;
 		resultado[4] = adultos+"";
 		resultado[5] = criancas+"";
-		
-		for(int i=0;i<BD.length;i++){
-			resultado[i + 6 + i*4] = BD[i].getNumero();
 
-			stPartida = BD[i].getHorarioPartida().getHora() + ":" + BD[i].getHorarioPartida().getMin();
+		for(int i=0;i<list.size();i++){
+			resultado[i + 6 + i*4] = list.get(i).getNumero();
+
+			stPartida = list.get(i).getHorarioPartida().getHora() + ":" + list.get(i).getHorarioPartida().getMin();
 			resultado[i + 7 +i*4] = stPartida;
 			
-			stChegada = BD[i].getHorarioChegada().getHora() + ":" + BD[i].getHorarioChegada().getMin();
+			stChegada = list.get(i).getHorarioChegada().getHora() + ":" + list.get(i).getHorarioChegada().getMin();
 			resultado[i + 8 + i*4] = stChegada;
-			
-			stPreco.format("%.2f", BD[i].getPreco());
+
+			stPreco = String.format("%.2f", list.get(i).getPreco());
 			resultado[i + 9 + i*4] = "R$ " + stPreco;
 		}
 		
