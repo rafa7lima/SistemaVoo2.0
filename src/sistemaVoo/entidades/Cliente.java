@@ -3,7 +3,6 @@ package sistemaVoo.entidades;
 import sistemaVoo.Ler;
 import sistemaVoo.testes.TesteCpf;
 
-
 public class Cliente extends PessoaFisica {
 
 	//Construtor SEM PARAMETRO
