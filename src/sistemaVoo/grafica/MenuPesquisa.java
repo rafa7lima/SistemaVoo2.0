@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextPane;
 import javax.swing.JSpinner;
@@ -48,72 +51,97 @@ public class MenuPesquisa extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblDadosDaPesquisa = new JLabel("Dados da pesquisa");
 		lblDadosDaPesquisa.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblDadosDaPesquisa.setBounds(162, 6, 131, 16);
 		contentPane.add(lblDadosDaPesquisa);
-		
+
 		JLabel lblOrigem = new JLabel("Origem: " + args[0]);
 		lblOrigem.setBounds(6, 34, 146, 16);
 		contentPane.add(lblOrigem);
-		
+
 		JLabel lblDestino = new JLabel("Destino: " + args[1]);
 		lblDestino.setBounds(6, 56, 131, 16);
 		contentPane.add(lblDestino);
-		
+
 		JLabel lblDataDaIda = new JLabel("Data da ida: " + args[2]);
 		lblDataDaIda.setBounds(149, 34, 188, 16);
 		contentPane.add(lblDataDaIda);
-		
+
 		JLabel lblDataDaVolta = new JLabel("Data da volta: " + args[3]);
 		lblDataDaVolta.setBounds(149, 56, 188, 16);
 		contentPane.add(lblDataDaVolta);
-		
+
 		JLabel lblAdultos = new JLabel("Adultos: " + args[4]);
 		lblAdultos.setBounds(349, 34, 95, 16);
 		contentPane.add(lblAdultos);
-		
+
 		JLabel lblCrianas = new JLabel("Crian\u00E7as: " + args[5]);
 		lblCrianas.setBounds(349, 56, 95, 16);
 		contentPane.add(lblCrianas);
-		
+
 		JLabel lblResultadoDaPesquisa = new JLabel("Resultados da pesquisa");
 		lblResultadoDaPesquisa.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblResultadoDaPesquisa.setBounds(139, 102, 167, 16);
 		contentPane.add(lblResultadoDaPesquisa);
-		
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(16, 78, 414, 12);
 		contentPane.add(separator);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(16, 126, 414, 134);
 		contentPane.add(scrollPane);
-		
-		String[] resultado = gerarListaResultados(args);
+
+		String[] resultadoTemp = gerarListaResultados(args);
+		String[] resultado;
+		boolean ok = false;
+		if(resultadoTemp != null){
+			ok = true;
+			resultado =resultadoTemp;
+		}else{
+			resultado = new String[1];
+			resultado[0] = "Nenhum resultado encontrado.";
+		}
 		JList list = new JList(resultado);
 		scrollPane.setViewportView(list);
-		
-		
+
+		if(ok){
+			list.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent evt){
+					JList list = (JList)evt.getSource();
+					if (evt.getClickCount() == 2){
+						int index = list.locationToIndex(evt.getPoint());
+						JanelaCompraEfetuada novaJanela = new JanelaCompraEfetuada();
+						novaJanela.dispose();
+						novaJanela.main(new String[1]);
+					}
+				}
+			});
+		}
 	}
-	
+
 	private String[] gerarListaResultados(String[] args){
 		try{
 			int tamanho = (args.length - 6)/4; 
-			String[] lista = new String[tamanho];
-			String espaco = new String(new char[21]).replace("\0","&nbsp");
-			for(int i=0;i<tamanho;i++){
-				lista[i] = "<html>Voo no. " + args[6 + i*4] + ":   Partida: " + args[7 + i*4] + 
-						"<br/>" + espaco + " Chegada: " + args[8 + i*4] +
-						"<br/>" + espaco + " Preço: " + args[9 + i*4]+"</html>";
+			if(tamanho ==0){
+				return null;
+			}else{
+				String[] lista = new String[tamanho];
+				String espaco = new String(new char[21]).replace("\0","&nbsp");
+				for(int i=0;i<tamanho;i++){
+					lista[i] = "<html>Voo no. " + args[6 + i*4] + ":   Partida: " + args[7 + i*4] + 
+							"<br/>" + espaco + " Chegada: " + args[8 + i*4] +
+							"<br/>" + espaco + " Preço: " + args[9 + i*4]+"</html>";
+				}
+				return lista;
 			}
-			return lista;
 		}catch(NumberFormatException e){
 			System.out.println("Insira um valor inteiro.");
 			e.getMessage();
 			return null;
 		}
-		
+
 	}
 }

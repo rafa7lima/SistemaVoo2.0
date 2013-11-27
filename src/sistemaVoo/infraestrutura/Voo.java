@@ -14,7 +14,7 @@ public class Voo {
 	private Aeronave aviaoDoVoo;
 	private int maxPassageiros;
 	private Passageiro[] listaDePassageiros = {};
-	private float preco;
+	private double preco;
 	
 	public Voo() {
 		// TODO Auto-generated constructor stub
@@ -90,12 +90,12 @@ public class Voo {
 		this.listaDePassageiros = listaDePassageiros;
 	}
 
-	public float getPreco() {
+	public double getPreco() {
 		return preco;
 	}
 
-	public void setPreco(float preco) {
-		this.preco = preco;
+	public void setPreco(double d) {
+		this.preco = d;
 	}
 
 	public int getMaxPassageiros() {
