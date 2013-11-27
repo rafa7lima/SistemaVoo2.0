@@ -7,6 +7,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextPane;
+import javax.swing.JSpinner;
+import javax.swing.JSeparator;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
+import com.sun.xml.internal.ws.util.StringUtils;
 
 public class MenuPesquisa extends JFrame {
 
@@ -41,6 +50,7 @@ public class MenuPesquisa extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblDadosDaPesquisa = new JLabel("Dados da pesquisa");
+		lblDadosDaPesquisa.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		lblDadosDaPesquisa.setBounds(162, 6, 131, 16);
 		contentPane.add(lblDadosDaPesquisa);
 		
@@ -67,5 +77,43 @@ public class MenuPesquisa extends JFrame {
 		JLabel lblCrianas = new JLabel("Crian\u00E7as: " + args[5]);
 		lblCrianas.setBounds(349, 56, 95, 16);
 		contentPane.add(lblCrianas);
+		
+		JLabel lblResultadoDaPesquisa = new JLabel("Resultados da pesquisa");
+		lblResultadoDaPesquisa.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		lblResultadoDaPesquisa.setBounds(139, 102, 167, 16);
+		contentPane.add(lblResultadoDaPesquisa);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(16, 78, 414, 12);
+		contentPane.add(separator);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(16, 126, 414, 134);
+		contentPane.add(scrollPane);
+		
+		String[] resultado = gerarListaResultados(args);
+		JList list = new JList(resultado);
+		scrollPane.setViewportView(list);
+		
+		
+	}
+	
+	private String[] gerarListaResultados(String[] args){
+		try{
+			int tamanho = (args.length - 6)/4; 
+			String[] lista = new String[tamanho];
+			String espaco = new String(new char[21]).replace("\0","&nbsp");
+			for(int i=0;i<tamanho;i++){
+				lista[i] = "<html>Voo no. " + args[6 + i*4] + ":   Partida: " + args[7 + i*4] + 
+						"<br/>" + espaco + " Chegada: " + args[8 + i*4] +
+						"<br/>" + espaco + " Preço: " + args[9 + i*4]+"</html>";
+			}
+			return lista;
+		}catch(NumberFormatException e){
+			System.out.println("Insira um valor inteiro.");
+			e.getMessage();
+			return null;
+		}
+		
 	}
 }

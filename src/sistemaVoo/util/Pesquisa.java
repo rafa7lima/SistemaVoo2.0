@@ -25,30 +25,10 @@ public class Pesquisa {
 
 	public String[] pesquisar(){
 
-		// Aqui seria preciso acessar o BD. Pra simplificar, usaremos um array de voos
-		Voo voo1 = new Voo("A100");
-		Voo voo2 = new Voo("B200");
-		Voo voo3 = new Voo("C300");
-
-		Horario hora1 = new Horario(8,10);
-		Horario hora2 = new Horario(9,50);
-		voo1.cadastrarVoo("A100", "Bras’lia", "Congonhas", hora1, hora2, 300);
-		voo1.setPreco(343);
-		//System.out.println("voo1 cadastrado");
-
-		hora1 = new Horario(10,30);
-		hora2 = new Horario(12,10);
-		voo2.cadastrarVoo("B200", "Congonhas", "Bras’lia", hora1, hora2, 300);
-		voo2.setPreco(249);
-		//System.out.println("voo2 cadastrado");
-
-		hora1 = new Horario(19,55);
-		hora2 = new Horario(21,45);
-		voo3.cadastrarVoo("C300", "Bras’lia", "Gale‹o", hora1, hora2, 200);
-		voo3.setPreco(138);
-		//System.out.println("voo3 cadastrado");
-
-		Voo[] BD = {voo1,voo2,voo3};
+		//Acessa o BD
+		Voo[] BD = acessarBD();
+		
+		//Busca no BD um voo com os criterios selecionados pelo cliente
 		ArrayList<Voo> list = new ArrayList<Voo>();
 
 		int cadeirasNecessarias = this.adultos + this.criancas;
@@ -66,7 +46,6 @@ public class Pesquisa {
 		
 		
 		//Definindo a saida do metodo
-
 		int tamanhoArrayResultado = 6 + 4*list.size();
 		String resultado[] = new String[tamanhoArrayResultado];
 		
@@ -99,5 +78,36 @@ public class Pesquisa {
 		return resultado;
 	}
 
+	private Voo[] acessarBD(){
+
+		// Aqui seria preciso acessar o BD. Pra simplificar, usaremos um array de voos
+		Voo voo1 = new Voo("A100");
+		Voo voo2 = new Voo("B200");
+		Voo voo3 = new Voo("C300");
+
+		Horario hora1 = new Horario(8,10);
+		Horario hora2 = new Horario(9,50);
+		voo1.cadastrarVoo("A100", "Brasilia", "Congonhas", hora1, hora2, 300);
+		voo1.setPreco(343);
+		//System.out.println("voo1 cadastrado");
+
+		hora1 = new Horario(10,30);
+		hora2 = new Horario(12,10);
+		voo2.cadastrarVoo("B200", "Congonhas", "Brasilia", hora1, hora2, 300);
+		voo2.setPreco(249);
+		//System.out.println("voo2 cadastrado");
+
+		hora1 = new Horario(19,55);
+		hora2 = new Horario(21,45);
+		voo3.cadastrarVoo("C300", "Brasilia", "Gale‹o", hora1, hora2, 200);
+		voo3.setPreco(138);
+		//System.out.println("voo3 cadastrado");
+		
+		Voo[] BD = {voo1,voo2,voo3};
+		return BD;
+		
+	}
+	
 
 }
+
