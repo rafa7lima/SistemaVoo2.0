@@ -26,7 +26,7 @@ public class testePesquisar {
 		
 		Data ida = new Data(25,12,2013);
 		Data volta = new Data(30,12,2013);
-		Pesquisa pesquisaDeTeste = new Pesquisa("Bras’lia", "Congonhas", ida, volta, 1, 0);
+		Pesquisa pesquisaDeTeste = new Pesquisa("Brasilia", "Congonhas", ida, volta, 1, 0);
 		
 		String[] resultado = pesquisaDeTeste.pesquisar();
 		
@@ -35,14 +35,17 @@ public class testePesquisar {
 		}
 		
 		
-		assertEquals(resultado[0], "Bras’lia");
+		assertEquals(resultado[0], "Brasilia");
 		assertEquals(resultado[1], "Congonhas");
 		assertEquals(resultado[2], "25/12/2013");
 		assertEquals(resultado[3], "30/12/2013");
 		assertEquals(resultado[4], "1");
 		assertEquals(resultado[5], "0");
 		
-		
+		assertEquals(resultado[6], "A100");
+		assertEquals(resultado[7], "8:10");
+		assertEquals(resultado[8], "9:50");
+		assertEquals(resultado[9], "R$ 343,00");
 		
 	}
 
