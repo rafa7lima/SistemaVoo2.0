@@ -1,6 +1,7 @@
 package sistemaVoo.util;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import sistemaVoo.infraestrutura.Voo;
 
@@ -63,16 +64,16 @@ public class Pesquisa {
 		resultado[5] = criancas+"";
 
 		for(int i=0;i<list.size();i++){
-			resultado[i + 6 + i*4] = list.get(i).getNumero();
+			resultado[i + 6 + i*3] = list.get(i).getNumero();
 
 			stPartida = list.get(i).getHorarioPartida().getHora() + ":" + list.get(i).getHorarioPartida().getMin();
-			resultado[i + 7 +i*4] = stPartida;
+			resultado[i + 7 +i*3] = stPartida;
 			
 			stChegada = list.get(i).getHorarioChegada().getHora() + ":" + list.get(i).getHorarioChegada().getMin();
-			resultado[i + 8 + i*4] = stChegada;
+			resultado[i + 8 + i*3] = stChegada;
 
 			stPreco = String.format("%.2f", list.get(i).getPreco());
-			resultado[i + 9 + i*4] = "R$ " + stPreco;
+			resultado[i + 9 + i*3] = "R$ " + stPreco;
 		}
 		
 		return resultado;
@@ -84,6 +85,7 @@ public class Pesquisa {
 		Voo voo1 = new Voo("A100");
 		Voo voo2 = new Voo("B200");
 		Voo voo3 = new Voo("C300");
+		Voo voo4 = new Voo("D400");
 
 		Horario hora1 = new Horario(8,10);
 		Horario hora2 = new Horario(9,50);
@@ -103,7 +105,10 @@ public class Pesquisa {
 		voo3.setPreco(138);
 		//System.out.println("voo3 cadastrado");
 		
-		Voo[] BD = {voo1,voo2,voo3};
+		voo4.cadastrarVoo("D400", "Brasilia", "Congonhas", hora1, hora2, 200);
+		voo4.setPreco(301.52);
+		
+		Voo[] BD = {voo1,voo2,voo3,voo4};
 		return BD;
 		
 	}
