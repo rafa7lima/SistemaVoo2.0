@@ -17,7 +17,22 @@ public class PassageiroTeste {
 	}
 
 	@Test
-	public void test() {
+	public void testPassageiro() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetNumeroAssento() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetNumeroAssento() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString() {
 		fail("Not yet implemented");
 	}
 

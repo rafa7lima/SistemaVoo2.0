@@ -17,7 +17,52 @@ public class FuncionarioTeste {
 	}
 
 	@Test
-	public void test() {
+	public void testCadastrar() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFuncionario() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFuncionarioString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCadastrarSenha() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testVerificarSenha() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testConsultarPassageiros() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMenuDoFuncionario() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMenu() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetLogin() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetLogin() {
 		fail("Not yet implemented");
 	}
 

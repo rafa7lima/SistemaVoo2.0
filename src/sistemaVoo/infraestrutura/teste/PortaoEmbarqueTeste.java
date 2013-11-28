@@ -1,4 +1,4 @@
-package sistemaVoo.entidades.testes;
+package sistemaVoo.infraestrutura.teste;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class OperadorTeste {
+public class PortaoEmbarqueTeste {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,12 +17,7 @@ public class OperadorTeste {
 	}
 
 	@Test
-	public void testMenu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testOperador() {
+	public void testPortaoEmbarque() {
 		fail("Not yet implemented");
 	}
 

@@ -17,7 +17,27 @@ public class ClienteTeste {
 	}
 
 	@Test
-	public void test() {
+	public void testCadastrar() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCliente() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testClienteString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testClienteStringStringStringString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMenu() {
 		fail("Not yet implemented");
 	}
 

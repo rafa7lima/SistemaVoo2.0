@@ -17,7 +17,32 @@ public class HorarioTeste {
 	}
 
 	@Test
-	public void test() {
+	public void testImprimirHoraAtual() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testHorario() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetHora() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetHora() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetMin() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetMin() {
 		fail("Not yet implemented");
 	}
 

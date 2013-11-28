@@ -17,7 +17,17 @@ public class AdministradorTeste {
 	}
 
 	@Test
-	public void test() {
+	public void testMenu() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAdministrador() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testConsultarPassageiro() {
 		fail("Not yet implemented");
 	}
 
