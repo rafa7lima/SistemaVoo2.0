@@ -9,6 +9,7 @@ public class Operador extends Funcionario {
 	public Operador(){
 		super();
 	}
+	
 	public void menu(){
 		System.out.println("O que voce deseja fazer?");
 		System.out.println("1. Cadastrar Voo");
