@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.infraestrutura.PortaoEmbarque;
+
 public class PortaoEmbarqueTeste {
 
 	@Before
@@ -18,7 +20,7 @@ public class PortaoEmbarqueTeste {
 
 	@Test
 	public void testPortaoEmbarque() {
-		fail("Not yet implemented");
+	PortaoEmbarque A = new PortaoEmbarque();
 	}
 
 }
