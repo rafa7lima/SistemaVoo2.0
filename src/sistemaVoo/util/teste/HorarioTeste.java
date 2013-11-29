@@ -42,18 +42,23 @@ public class HorarioTeste {
 
 	@Test
 	public void testSetHora() {
-		
+		Horario h3 = new Horario(0,2);
+		h3.setHora(10);
+		h3.getHora();
 	}
 
 	@Test
 	public void testGetMin() {
-		Horario h4 = new Horario(0,1);
+		Horario h4 = new Horario(0,3);
 		h4.getHora();
 	
 	}
 
 	@Test
 	public void testSetMin() {
+		Horario h5 = new Horario(0,4);
+		h5.setMin(11);
+		h5.getMin();
 	
 	}
 
