@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.entidades.Administrador;
+
 public class AdministradorTeste {
 
 	@Before
@@ -18,17 +20,19 @@ public class AdministradorTeste {
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
+		Administrador admin = new Administrador();
+		admin.menu();
+		
 	}
 
 	@Test
 	public void testAdministrador() {
-		fail("Not yet implemented");
+		Administrador admin1 = new Administrador();
 	}
 
 	@Test
 	public void testConsultarPassageiro() {
-		fail("Not yet implemented");
+		Administrador admin2 = new Administrador();
 	}
 
 }
