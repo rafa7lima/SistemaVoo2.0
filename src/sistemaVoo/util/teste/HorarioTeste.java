@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.util.Horario;
+
 public class HorarioTeste {
 
 	@Before
@@ -18,32 +20,41 @@ public class HorarioTeste {
 
 	@Test
 	public void testImprimirHoraAtual() {
-		fail("Not yet implemented");
+		
+		Horario horario = new Horario(0,0);	
+		horario.imprimirHoraAtual();
+		
 	}
 
 	@Test
 	public void testHorario() {
-		fail("Not yet implemented");
+	Horario h1 =  new Horario (0,0);
+	
 	}
 
 	@Test
 	public void testGetHora() {
-		fail("Not yet implemented");
+		Horario h2 = new Horario(0,1);
+		h2.getHora();
+		
+		
 	}
 
 	@Test
 	public void testSetHora() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetMin() {
-		fail("Not yet implemented");
+		Horario h4 = new Horario(0,1);
+		h4.getHora();
+	
 	}
 
 	@Test
 	public void testSetMin() {
-		fail("Not yet implemented");
+	
 	}
 
 }

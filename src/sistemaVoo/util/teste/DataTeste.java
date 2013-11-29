@@ -18,42 +18,42 @@ public class DataTeste {
 
 	@Test
 	public void testData() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testDataIntIntInt() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetDia() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetDia() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetMes() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetMes() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetAno() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testSetAno() {
-		fail("Not yet implemented");
+		
 	}
 
 }
