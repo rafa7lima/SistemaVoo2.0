@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.entidades.Operador;
+
 public class OperadorTeste {
 
 	@Before
@@ -18,12 +20,14 @@ public class OperadorTeste {
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
-	}
+		Operador oper1 = new Operador();
+		oper1.menu();
+		
+		}
 
 	@Test
 	public void testOperador() {
-		fail("Not yet implemented");
+	Operador oper1 = new Operador();
 	}
 
 }

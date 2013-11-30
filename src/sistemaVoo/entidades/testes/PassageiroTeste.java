@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.entidades.Passageiro;
+
 public class PassageiroTeste {
 
 	@Before
@@ -18,22 +20,27 @@ public class PassageiroTeste {
 
 	@Test
 	public void testPassageiro() {
-		fail("Not yet implemented");
+		Passageiro p1 = new Passageiro();
 	}
 
 	@Test
 	public void testGetNumeroAssento() {
-		fail("Not yet implemented");
+		Passageiro p1 = new Passageiro();
+		p1.getNumeroAssento();
+	
 	}
 
 	@Test
 	public void testSetNumeroAssento() {
-		fail("Not yet implemented");
+		Passageiro p1 = new Passageiro();
+		p1.setNumeroAssento((Integer) null);
+		p1.getNumeroAssento();
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		Passageiro p1 = new Passageiro();
+		p1.toString();
 	}
 
 }

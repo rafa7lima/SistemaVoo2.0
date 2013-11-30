@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.entidades.Funcionario;
+
 public class FuncionarioTeste {
 
 	@Before
@@ -18,52 +20,64 @@ public class FuncionarioTeste {
 
 	@Test
 	public void testCadastrar() {
-		fail("Not yet implemented");
-	}
+			}
 
 	@Test
 	public void testFuncionario() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		
 	}
 
 	@Test
 	public void testFuncionarioString() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario(null);
+
+		
 	}
 
 	@Test
 	public void testCadastrarSenha() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.cadastrarSenha(null);
+		
 	}
 
 	@Test
 	public void testVerificarSenha() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.verificarSenha();
+		
 	}
 
 	@Test
 	public void testConsultarPassageiros() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.consultarPassageiros(null);
 	}
 
 	@Test
 	public void testMenuDoFuncionario() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.menuDoFuncionario();
 	}
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.menu();
 	}
 
 	@Test
 	public void testGetLogin() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.getLogin();
 	}
 
 	@Test
 	public void testSetLogin() {
-		fail("Not yet implemented");
+		Funcionario fun1 = new Funcionario();
+		fun1.setLogin(null);
+		fun1.getLogin();
 	}
 
 }

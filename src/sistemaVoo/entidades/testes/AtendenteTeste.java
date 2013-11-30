@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.entidades.Atendente;
+
 public class AtendenteTeste {
 
 	@Before
@@ -18,17 +20,17 @@ public class AtendenteTeste {
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testAtendente() {
-		fail("Not yet implemented");
+	Atendente atendente = new Atendente();
 	}
 
 	@Test
 	public void testConsultarPassageiro() {
-		fail("Not yet implemented");
+
 	}
 
 }

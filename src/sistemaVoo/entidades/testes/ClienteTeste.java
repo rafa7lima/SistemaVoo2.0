@@ -6,6 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import sistemaVoo.Ler;
+import sistemaVoo.entidades.Cliente;
+
 public class ClienteTeste {
 
 	@Before
@@ -18,27 +21,29 @@ public class ClienteTeste {
 
 	@Test
 	public void testCadastrar() {
-		fail("Not yet implemented");
+
 	}
 
 	@Test
 	public void testCliente() {
-		fail("Not yet implemented");
+		Cliente cliente0 = new Cliente();
+
 	}
 
 	@Test
 	public void testClienteString() {
-		fail("Not yet implemented");
+		Cliente cliente = new Cliente(null);
 	}
 
 	@Test
 	public void testClienteStringStringStringString() {
-		fail("Not yet implemented");
+		Cliente cliente = new Cliente(null,null,null,null);
 	}
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
+		Cliente cliente = new Cliente();
+		//cliente.menu();		
 	}
 
 }
