@@ -66,8 +66,7 @@ public class VooTeste {
 	@Test
 	public void testSetOrigem() {
 		Voo voo5 = new Voo();
-		Aeroporto Brasilia = null;
-		voo5.setOrigem(Brasilia);
+		voo5.setOrigem("Brasilia");
 		voo5.getOrigem();
 	}
 
@@ -81,8 +80,7 @@ public class VooTeste {
 	@Test
 	public void testSetDestino() {
 		Voo voo6 = new Voo();
-		Aeroporto Congonhas = null;
-		voo6.setDestino(Congonhas);
+		voo6.setDestino("Congonhas");
 		voo6.getOrigem();
 
 	}

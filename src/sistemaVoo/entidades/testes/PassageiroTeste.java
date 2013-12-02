@@ -33,7 +33,7 @@ public class PassageiroTeste {
 	@Test
 	public void testSetNumeroAssento() {
 		Passageiro p1 = new Passageiro();
-		p1.setNumeroAssento((Integer) null);
+		p1.setNumeroAssento(2);
 		p1.getNumeroAssento();
 	}
 
