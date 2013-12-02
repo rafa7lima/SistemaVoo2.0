@@ -121,6 +121,13 @@ public class MenuFuncionarios extends JFrame {
 				   return (resultado);
 			  }//Fim do metodo para validar
         });  //Fim das açoes do botão
+		
+		//Açoes para o botão cancelar
+		btnCancelar.addActionListener(new ActionListener() {  
+	        public void actionPerformed(ActionEvent evt) {  
+	        	MenuFuncionarios.this.dispose(); //Usa o dispose para fechar a janela
+	        }  
+	    });  
 
 		//Senhas padrão
 		/*/
