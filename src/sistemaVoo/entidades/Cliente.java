@@ -56,6 +56,15 @@ public class Cliente extends PessoaFisica {
         if(i == 1){
         	this.cadastrar();
         }
+<<<<<<< HEAD
+=======
+        if(i == 2){
+        	System.out.println("Diga seu CPF (Apenas nœmeros):");
+    		String post = Ler.lerString();      	
+        	        	
+        	
+        }
+>>>>>>> origin/iago
         else
         	System.out.println("Opcao invalida.");
 	}
