@@ -15,12 +15,16 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.Toolkit;
 
-public class MenuFuncionarios extends JFrame {
+public class MenuLoginUsuario extends JFrame {
 
         /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3806305179115740925L;
+		/**
          * 
          */
-        private static final long serialVersionUID = 1L;
+        private static final long MenuLoginUsuario = 1L;
         private JPanel contentPane;
         private JPasswordField passwordField;
 
@@ -31,7 +35,7 @@ public class MenuFuncionarios extends JFrame {
                 EventQueue.invokeLater(new Runnable() {
                         public void run() {
                                 try {
-                                        MenuFuncionarios frame = new MenuFuncionarios();
+                                	MenuLoginUsuario frame = new MenuLoginUsuario();
                                         frame.setVisible(true);
                                 } catch (Exception e) {
                                         e.printStackTrace();
@@ -40,124 +44,11 @@ public class MenuFuncionarios extends JFrame {
                 });
         }
 
-<<<<<<< HEAD
-	/**
-	 * Create the frame.
-	 */
-	public MenuFuncionarios() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblLoginDeFuncionrios = new JLabel("Login no Sistema");
-		lblLoginDeFuncionrios.setBounds(5, 5, 424, 14);
-		contentPane.add(lblLoginDeFuncionrios);
-		
-		JLabel lblDigiteASua = new JLabel("Digite a sua senha:");
-		lblDigiteASua.setBounds(10, 44, 159, 14);
-		contentPane.add(lblDigiteASua);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(20, 69, 209, 28);
-		contentPane.add(passwordField);
-		
-		
-		JButton btnLogar = new JButton("Logar");
-		btnLogar.setBounds(166, 119, 89, 23);
-		contentPane.add(btnLogar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(67, 119, 89, 23);
-		contentPane.add(btnCancelar);
-		
-		JLabel lblUmNovo = new JLabel("\u00C9 um novo cliente? deseja se cadastrar?");
-		lblUmNovo.setBounds(10, 158, 286, 14);
-		contentPane.add(lblUmNovo);
-		
-		JButton btnCadastrar = new JButton("Cadastrar");		
-		btnCadastrar.setBounds(10, 183, 104, 23);
-		contentPane.add(btnCadastrar);
-		
-		//Ação para cada botão 
-		btnLogar.addActionListener(new java.awt.event.ActionListener() {  
-            //Ação realizada
-			public void actionPerformed(java.awt.event.ActionEvent evt) {  
-                //Aqui serão inseridas as ações para o botão
-				String senha=passwordField.getText();   //Aqui iremos iniciar a validação da senha
-				 //Agora vamos para a condição para validar
-				if(Valida(senha)==1){
-					JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como cliente!");
-				}else 
-					if(Valida(senha)==2){
-						JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como funcionário!");
-					}
-					else
-						if(Valida(senha)==3){
-							JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como administrador!");
-						}
-						else
-							if(Valida(senha)==0){
-								JOptionPane.showMessageDialog(null, "Senha Incorreta!\nUsuário não Logado!");
-							}
-            }
 
-			//Metodo para validar
-			  private int Valida(String senha){
-				  int senhaInt=0;
-				  int resultado;
-				  try {
-					  //Passar string para inteiro
-					  senhaInt= Integer.parseInt(senha);
-					} catch (Exception e) {
-						e.getMessage();
-					}
-				  if(senhaInt%7==0&&senhaInt!=0){
-						resultado=1;
-					}
-					else
-						if(senhaInt%11==0&&senhaInt!=0){
-							resultado=2;
-						}
-						else
-							if(senhaInt%4==0&&senhaInt!=0){
-								resultado=3;
-							}
-							else{
-								resultado=0;
-							}
-				   return (resultado);
-			  }//Fim do metodo para validar
-        });  //Fim das açoes do botão
-		
-		//Açoes para o botão cancelar
-		btnCancelar.addActionListener(new ActionListener() {  
-	        public void actionPerformed(ActionEvent evt) {  
-	        	MenuFuncionarios.this.dispose(); //Usa o dispose para fechar a janela
-	        }  
-	    });  
- //Ações para o botão cadastrar
-		btnCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			CadastroCliente novoCadastro=new CadastroCliente();	
-			novoCadastro.dispose();
-			String[] string={}; //Para passar o argumento para a main
-			novoCadastro.main(string);
-			}
-		});
-		//Senhas padrão
-		/*/
-		  458927  //Mod 7
-	      294580 //Mod 11
-	      527896  //Mod 4
-		 */
-=======
         /**
          * Create the frame.
          */
-        public MenuFuncionarios() {
+        public MenuLoginUsuario() {
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 setBounds(100, 100, 450, 300);
                 contentPane = new JPanel();
@@ -186,18 +77,31 @@ public class MenuFuncionarios extends JFrame {
                 btnCancelar.setBounds(67, 119, 89, 23);
                 contentPane.add(btnCancelar);
                 
-                //A‹o para cada bot‹o 
+                JLabel lblNovoUsurioDeseja = new JLabel("Novo UsuÃ¡rio? Deseja se Cadastrar?");
+                lblNovoUsurioDeseja.setBounds(20, 165, 252, 14);
+                contentPane.add(lblNovoUsurioDeseja);
+                
+                JButton btnNewButton = new JButton("Cadastrar");
+                btnNewButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		
+                	}
+                });
+                btnNewButton.setBounds(10, 190, 99, 23);
+                contentPane.add(btnNewButton);
+                
+                //AÂâ€¹o para cada botâ€¹o 
                 btnLogar.addActionListener(new java.awt.event.ActionListener() {  
-            //A‹o realizada
+            //AÂâ€¹o realizada
                         public void actionPerformed(java.awt.event.ActionEvent evt) {  
-                //Aqui ser‹o inseridas as a›es para o bot‹o
-                                String senha=passwordField.getText();   //Aqui iremos iniciar a valida‹o da senha
-                                 //Agora vamos para a condi‹o para validar
+                //Aqui serâ€¹o inseridas as aÂâ€ºes para o botâ€¹o
+                                String senha=passwordField.getText();   //Aqui iremos iniciar a validaÂâ€¹o da senha
+                                 //Agora vamos para a condiÂâ€¹o para validar
                                 if(Valida(senha)==1){
                                         JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como cliente!");
                                 }else 
                                         if(Valida(senha)==2){
-                                                JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como funcion‡rio!");
+                                                JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como funcionâ€¡rio!");
                                         }
                                         else
                                                 if(Valida(senha)==3){
@@ -205,7 +109,7 @@ public class MenuFuncionarios extends JFrame {
                                                 }
                                                 else
                                                         if(Valida(senha)==0){
-                                                                JOptionPane.showMessageDialog(null, "Senha Incorreta!\nUsu‡rio n‹o Logado!");
+                                                                JOptionPane.showMessageDialog(null, "Senha Incorreta!\nUsuâ€¡rio nâ€¹o Logado!");
                                                         }
             }
 
@@ -235,17 +139,14 @@ public class MenuFuncionarios extends JFrame {
                                                         }
                                    return (resultado);
                           }//Fim do metodo para validar
-        });  //Fim das aoes do bot‹o
+        });  //Fim das aÂoes do botâ€¹o
 
-                //Senhas padr‹o
+                //Senhas padrâ€¹o
                 /*/
                   458927  //Mod 7
               294580 //Mod 11
               527896  //Mod 4
                  */
->>>>>>> a628cb34b8fc646e51b1aae04784c1bbfd6a28b9
-
-                
-
-        }
+            }
 }
+	
