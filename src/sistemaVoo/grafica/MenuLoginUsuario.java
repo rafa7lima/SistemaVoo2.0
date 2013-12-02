@@ -84,6 +84,10 @@ public class MenuLoginUsuario extends JFrame {
                 JButton btnNewButton = new JButton("Cadastrar");
                 btnNewButton.addActionListener(new ActionListener() {
                 	public void actionPerformed(ActionEvent e) {
+                		CadastroCliente novoCadastro=new CadastroCliente();
+                		novoCadastro.dispose();
+                		String [] string={};
+                		novoCadastro.main(string);
                 		
                 	}
                 });
