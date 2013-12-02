@@ -13,7 +13,7 @@ public class CorpoDaMain {
 
 	public static void main(String[] args) { 
 		//CABECALHO
-		System.out.println("SEXTA ETAPA DA ATIVIDADE PRATICA");
+		System.out.println("ETAPA FINAL DA ATIVIDADE PRATICA");
 		System.out.println("Disciplina: Orientacao a objetos");
 		System.out.println("Professora Milene");
 		System.out.println("Grupo: 7\n");
