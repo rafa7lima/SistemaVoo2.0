@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.Toolkit;
 
 public class MenuFuncionarios extends JFrame {
 
@@ -50,7 +51,7 @@ public class MenuFuncionarios extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblLoginDeFuncionrios = new JLabel("Login de Funcion\u00E1rios");
+		JLabel lblLoginDeFuncionrios = new JLabel("Login no Sistema");
 		lblLoginDeFuncionrios.setBounds(5, 5, 424, 14);
 		contentPane.add(lblLoginDeFuncionrios);
 		
@@ -70,6 +71,14 @@ public class MenuFuncionarios extends JFrame {
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(67, 119, 89, 23);
 		contentPane.add(btnCancelar);
+		
+		JLabel lblUmNovo = new JLabel("\u00C9 um novo cliente? deseja se cadastrar?");
+		lblUmNovo.setBounds(10, 158, 286, 14);
+		contentPane.add(lblUmNovo);
+		
+		JButton btnCadastrar = new JButton("Cadastrar");		
+		btnCadastrar.setBounds(10, 183, 104, 23);
+		contentPane.add(btnCadastrar);
 		
 		//Ação para cada botão 
 		btnLogar.addActionListener(new java.awt.event.ActionListener() {  
@@ -104,15 +113,15 @@ public class MenuFuncionarios extends JFrame {
 					} catch (Exception e) {
 						e.getMessage();
 					}
-				  if(senhaInt%7==0){
+				  if(senhaInt%7==0&&senhaInt!=0){
 						resultado=1;
 					}
 					else
-						if(senhaInt%11==0){
+						if(senhaInt%11==0&&senhaInt!=0){
 							resultado=2;
 						}
 						else
-							if(senhaInt%4==0){
+							if(senhaInt%4==0&&senhaInt!=0){
 								resultado=3;
 							}
 							else{
@@ -128,7 +137,15 @@ public class MenuFuncionarios extends JFrame {
 	        	MenuFuncionarios.this.dispose(); //Usa o dispose para fechar a janela
 	        }  
 	    });  
-
+ //Ações para o botão cadastrar
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			CadastroCliente novoCadastro=new CadastroCliente();	
+			novoCadastro.dispose();
+			String[] string={}; //Para passar o argumento para a main
+			novoCadastro.main(string);
+			}
+		});
 		//Senhas padrão
 		/*/
 		  458927  //Mod 7
