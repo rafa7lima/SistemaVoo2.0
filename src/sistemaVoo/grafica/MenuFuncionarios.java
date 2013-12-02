@@ -16,127 +16,120 @@ import javax.swing.JButton;
 
 public class MenuFuncionarios extends JFrame {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	private JPasswordField passwordField;
+        /**
+         * 
+         */
+        private static final long serialVersionUID = 1L;
+        private JPanel contentPane;
+        private JPasswordField passwordField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuFuncionarios frame = new MenuFuncionarios();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+        /**
+         * Launch the application.
+         */
+        public static void main(String[] args) {
+                EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                                try {
+                                        MenuFuncionarios frame = new MenuFuncionarios();
+                                        frame.setVisible(true);
+                                } catch (Exception e) {
+                                        e.printStackTrace();
+                                }
+                        }
+                });
+        }
 
-	/**
-	 * Create the frame.
-	 */
-	public MenuFuncionarios() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblLoginDeFuncionrios = new JLabel("Login de Funcion\u00E1rios");
-		lblLoginDeFuncionrios.setBounds(5, 5, 424, 14);
-		contentPane.add(lblLoginDeFuncionrios);
-		
-		JLabel lblDigiteASua = new JLabel("Digite a sua senha:");
-		lblDigiteASua.setBounds(10, 44, 159, 14);
-		contentPane.add(lblDigiteASua);
-		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(20, 69, 209, 28);
-		contentPane.add(passwordField);
-		
-		
-		JButton btnLogar = new JButton("Logar");
-		btnLogar.setBounds(166, 119, 89, 23);
-		contentPane.add(btnLogar);
-		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(67, 119, 89, 23);
-		contentPane.add(btnCancelar);
-		
-		//AÁ„o para cada bot„o 
-		btnLogar.addActionListener(new java.awt.event.ActionListener() {  
-            //AÁ„o realizada
-			public void actionPerformed(java.awt.event.ActionEvent evt) {  
-                //Aqui ser„o inseridas as aÁıes para o bot„o
-				String senha=passwordField.getText();   //Aqui iremos iniciar a validaÁ„o da senha
-				 //Agora vamos para a condiÁ„o para validar
-				if(Valida(senha)==1){
-					JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como cliente!");
-				}else 
-					if(Valida(senha)==2){
-						JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como funcion·rio!");
-					}
-					else
-						if(Valida(senha)==3){
-							JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como administrador!");
-						}
-						else
-							if(Valida(senha)==0){
-								JOptionPane.showMessageDialog(null, "Senha Incorreta!\nUsu·rio n„o Logado!");
-							}
+        /**
+         * Create the frame.
+         */
+        public MenuFuncionarios() {
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                setBounds(100, 100, 450, 300);
+                contentPane = new JPanel();
+                contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+                setContentPane(contentPane);
+                contentPane.setLayout(null);
+                
+                JLabel lblLoginDeFuncionrios = new JLabel("Login de Funcion\u00E1rios");
+                lblLoginDeFuncionrios.setBounds(5, 5, 424, 14);
+                contentPane.add(lblLoginDeFuncionrios);
+                
+                JLabel lblDigiteASua = new JLabel("Digite a sua senha:");
+                lblDigiteASua.setBounds(10, 44, 159, 14);
+                contentPane.add(lblDigiteASua);
+                
+                passwordField = new JPasswordField();
+                passwordField.setBounds(20, 69, 209, 28);
+                contentPane.add(passwordField);
+                
+                
+                JButton btnLogar = new JButton("Logar");
+                btnLogar.setBounds(166, 119, 89, 23);
+                contentPane.add(btnLogar);
+                
+                JButton btnCancelar = new JButton("Cancelar");
+                btnCancelar.setBounds(67, 119, 89, 23);
+                contentPane.add(btnCancelar);
+                
+                //Ação para cada botão 
+                btnLogar.addActionListener(new java.awt.event.ActionListener() {  
+            //Ação realizada
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {  
+                //Aqui serão inseridas as ações para o botão
+                                String senha=passwordField.getText();   //Aqui iremos iniciar a validação da senha
+                                 //Agora vamos para a condição para validar
+                                if(Valida(senha)==1){
+                                        JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como cliente!");
+                                }else 
+                                        if(Valida(senha)==2){
+                                                JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como funcionário!");
+                                        }
+                                        else
+                                                if(Valida(senha)==3){
+                                                        JOptionPane.showMessageDialog(null, "Senha Correta!\nLogado como administrador!");
+                                                }
+                                                else
+                                                        if(Valida(senha)==0){
+                                                                JOptionPane.showMessageDialog(null, "Senha Incorreta!\nUsuário não Logado!");
+                                                        }
             }
 
-			//Metodo para validar
-			  private int Valida(String senha){
-				  int senhaInt=0;
-				  int resultado;
-				  try {
-					  //Passar string para inteiro
-					  senhaInt= Integer.parseInt(senha);
-					} catch (Exception e) {
-						e.getMessage();
-					}
-				  if(senhaInt%7==0){
-						resultado=1;
-					}
-					else
-						if(senhaInt%11==0){
-							resultado=2;
-						}
-						else
-							if(senhaInt%4==0){
-								resultado=3;
-							}
-							else{
-								resultado=0;
-							}
-				   return (resultado);
-			  }//Fim do metodo para validar
-        });  //Fim das aÁoes do bot„o
-		
-		//AÁoes para o bot„o cancelar
-		btnCancelar.addActionListener(new ActionListener() {  
-	        public void actionPerformed(ActionEvent evt) {  
-	        	MenuFuncionarios.this.dispose(); //Usa o dispose para fechar a janela
-	        }  
-	    });  
+                        //Metodo para validar
+                          private int Valida(String senha){
+                                  int senhaInt=0;
+                                  int resultado;
+                                  try {
+                                          //Passar string para inteiro
+                                          senhaInt= Integer.parseInt(senha);
+                                        } catch (Exception e) {
+                                                e.getMessage();
+                                        }
+                                  if(senhaInt%7==0){
+                                                resultado=1;
+                                        }
+                                        else
+                                                if(senhaInt%11==0){
+                                                        resultado=2;
+                                                }
+                                                else
+                                                        if(senhaInt%4==0){
+                                                                resultado=3;
+                                                        }
+                                                        else{
+                                                                resultado=0;
+                                                        }
+                                   return (resultado);
+                          }//Fim do metodo para validar
+        });  //Fim das açoes do botão
 
-		//Senhas padr„o
-		/*/
-		  458927  //Mod 7
-	      294580 //Mod 11
-	      527896  //Mod 4
-		 */
+                //Senhas padrão
+                /*/
+                  458927  //Mod 7
+              294580 //Mod 11
+              527896  //Mod 4
+                 */
 
-		
+                
 
-	}
+        }
 }
