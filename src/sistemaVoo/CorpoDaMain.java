@@ -29,7 +29,7 @@ public class CorpoDaMain {
 			System.out.println("Voce e: [C]liente ou [F]uncionario?");
 			System.out.println("Para sair, digite [S].");
 			
-			leitor = Ler.lerString().toLowerCase();//Qualquer coisa digitada vira caracter minusculo
+			leitor = Ler.lerString().toLowerCase();
 			int caso = 0;
 			if (leitor.equals("c")| leitor.equals("cliente")){
 				caso = 1;
